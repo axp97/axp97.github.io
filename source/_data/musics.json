@@ -1,0 +1,23 @@
+[
+	{
+    "name": "平凡之路",
+    "artist": "朴树",
+    "url": "/medias/music/pfzl.mp3",
+    "cover": "/medias/music/avatars/Pushu.jpg"
+  },{
+		"name": "浪",
+		"artist": "许嵩",
+		"url": "/medias/music/l.mp3",
+		"cover": "/medias/music/avatars/Vae.jpg"
+  },{
+		"name": "海口",
+		"artist": "后弦",
+		"url": "/medias/music/hk.mp3",
+		"cover": "/medias/music/avatars/Hoho.jpg"
+	},{
+		"name": "葡萄成熟时",
+		"artist": "陈奕迅",
+		"url": "/medias/music/ptcss.mp3",
+		"cover": "/medias/music/avatars/Eason.jpg"
+	}
+]
