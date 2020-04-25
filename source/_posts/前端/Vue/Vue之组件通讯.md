@@ -1,6 +1,6 @@
 ---
 title: Vue.js之组件间通信
-date: 2018-09-29 18:00:00
+date: 2019-09-29 18:00:00
 author: 安小盼
 categories: 前端
 tags:
