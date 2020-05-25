@@ -13,9 +13,9 @@ menu:
   Archives:
     url: /archives
     icon: fa-archive
-  Book:
-    url: /books
-    icon: fa-book
+  # Book:
+  #   url: /books
+  #   icon: fa-book
   About:
     url: /about
     icon: fa-user-circle-o
