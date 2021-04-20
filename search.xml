@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Vue详细上手指北</title>
+      <link href="2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/"/>
+      <url>2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/</url>
+      
+        <content type="html"><![CDATA[<p>这是篇教程，跟着我的节奏来，学完后可以独立上手开发 Vue 项目！</p><h2 id="01-快速搭建项目"><a href="#01-快速搭建项目" class="headerlink" title="01 快速搭建项目"></a>01 快速搭建项目</h2><p>本节目的：用 Vue-cli 脚手架搭建一个 Vue 项目。<br><a href="https://cli.vuejs.org/zh/guide/installation.html" target="_blank" rel="noopener">戳官网教程</a></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="Vue-是什么"><a href="#Vue-是什么" class="headerlink" title="Vue 是什么"></a>Vue 是什么</h4><p>一套用于构建用户界面的前端 JS 框架。<a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="noopener">戳官网详细介绍</a></p><h4 id="为什么用-Vue"><a href="#为什么用-Vue" class="headerlink" title="为什么用 Vue"></a>为什么用 Vue</h4><p>流行：github 上 star 最多的前端框架，招聘大多要求。<br>学习：上手简单（数据驱动）<br>性能：组件化，性能好，运行速度快</p><h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><p><strong>Q：Vue 开发跟传统 Web 开发相比的优势？</strong><br>A：传统开发需操作 dom 元素，Vue 只关心图层，用数据驱动视图。减少额代码工作量，能更快地开发迭代项目。</p><hr><h2 id="上手"><a href="#上手" class="headerlink" title="上手"></a>上手</h2><h4 id="1、环境配置：node-js"><a href="#1、环境配置：node-js" class="headerlink" title="1、环境配置：node.js"></a>1、环境配置：node.js</h4><ul><li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">戳官网链接下载</a></li><li>下载安装成功后可查看版本<ol><li>打开命令行（Win+R，键入 cmd）输入     node -v</li><li>查看 npm 版本（node 自带安装了 npm）    npm -v</li><li>无报错，即显示了 node 版本即成功</li></ol></li></ul><h4 id="扩展-1"><a href="#扩展-1" class="headerlink" title="扩展"></a>扩展</h4><p><strong>Q：为什么用 node.js？</strong><br>A：node.js 在这里提供 npm 安装，为了方便模块管理。也可以 Web 页面中直接使用。</p><h4 id="2、安装-vue-cli-包"><a href="#2、安装-vue-cli-包" class="headerlink" title="2、安装 vue/cli 包"></a>2、安装 vue/cli 包</h4><ul><li>命令行输入：<code>npm install -g @vue/cli</code></li><li>安装后，命令行查看版本，输入：<code>vue --version</code></li></ul><h4 id="3、创建项目"><a href="#3、创建项目" class="headerlink" title="3、创建项目"></a>3、创建项目</h4><p>利用脚手架创建一个默认配置的名称为 first_vue 的项目</p><ul><li>到指定文件夹打开命令行</li><li>命令行输入：<code>vue create first_vue</code><br><img src="/static/vue/tutorial/chapter1_1.png" alt></li><li>完成后显示<br><img src="/static/vue/tutorial/chapter1_2.png" alt></li><li>命令行进入项目目录和运行项目；浏览器打开<br><img src="/static/vue/tutorial/chapter1_3.png" alt><br><img src="/static/vue/tutorial/chapter1_4.png" alt></li></ul><h2 id="02-下一节"><a href="#02-下一节" class="headerlink" title="02 下一节"></a>02 下一节</h2><p>下一节还没写好，客官稍安勿躁~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter手摸手趟坑</title>
+      <link href="2020/06/14/frontend/flutter/flutter-shou-mo-shou-tang-keng/"/>
+      <url>2020/06/14/frontend/flutter/flutter-shou-mo-shou-tang-keng/</url>
+      
+        <content type="html"><![CDATA[<p>前段时间由于公司需要，赶鸭子上架，用 Flutter 做了个简单 app，记录下实际中遇到的小坑~</p><h4 id="1-无法将”Unblock-File”项识别为-cndlet、-函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后重试。"><a href="#1-无法将”Unblock-File”项识别为-cndlet、-函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后重试。" class="headerlink" title="1. 无法将”Unblock-File”项识别为 cndlet、 函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后重试。"></a>1. 无法将”Unblock-File”项识别为 cndlet、 函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后重试。</h4><p><span style="color: green;">解决：到 windows 官网更新最新版的 powershell 5.0 版本，安装后重启并再次运行 <code>flutter doctor</code> </span></p><p>1.1、找到 PowerShell 程序，进入命令行窗口；<br>win+R 输入<code>PowerShell</code>；在命令行窗口中输入命令：<code>$PSVersionTable.PSVersion</code><br><img src="en-resource://database/4694:1" alt="4815c08233054a3a9e10834042866e24.png"><br>（实际版本会低于 5.0 才会报错）</p><p>1.2、点击下载 <a href="https://www.microsoft.com/en-us/download/details.aspx?id=54616" target="_blank" rel="noopener">Windows Management Framework 5.1</a><br><img src="en-resource://database/4695:1" alt="5b04a066975eec1656144803c8e21050.png"><br><strong>安装程序遇到错误：0x80240037</strong></p><p>2、把 Win7AndW2K8R2-KB3191566-x64.msu 的后缀名 <code>.msu</code> 改成 <code>.cab</code> 并解压到新文件夹中 cab（名字任起，我把它移到了 E 盘了）<br><img src="en-resource://database/4696:1" alt="12f99cb4a25c46d589616bbf69ac0e88.png"></p><p>3、打开 cmd，以管理员身份运行)，输入：</p><p><code>dism /online /add-package /packagepath:&quot;文件名.cab的完整路径&quot;</code></p><p>注：解压出来可能会有多个.cab，注意输入对应好的文件名.cab（前面下载的名字中是：KB2819745）安装好后，会提示是否立即重新启动：y（重新启动）</p><p><img src="en-resource://database/4697:1" alt="c937cad7c98c9e04edca6e1b07c9bac0.png"></p><p>4、cmd 输入 / 双击 flutter_console.bat 后输入 /打开 PowerShell 输入： <code>flutter doctor</code></p><p><code>WSUSSCAN.cab 是什么？cab 是什么文件？*.cab是微软制定的压缩包文件，常用于软件的安装程序。WSUSSCAN.cab 应该是更新补丁检测文件 补丁的扫描、下载和安装 在安装服务器的机器上同时运行着补丁下载器， 它会自动下载并更新补丁检测文件(wsusscan.cab)</code></p><h4 id="2-flutter-sdk-降级、回退、升级降级到指定的版本方法"><a href="#2-flutter-sdk-降级、回退、升级降级到指定的版本方法" class="headerlink" title="2. flutter sdk 降级、回退、升级降级到指定的版本方法"></a>2. flutter sdk 降级、回退、升级降级到指定的版本方法</h4><p><span style="color: green;">解决：<code>git reset --hard &lt;commit版本号&gt;</code></span></p><ul><li>进入<a href="https://github.com/flutter/flutter" target="_blank" rel="noopener">Flutter Git 源码</a>，release &gt; tags &gt; 拿到 commit 版本</li></ul><p><strong>切换 flutter sdk</strong><br>flutter 安装目录中执行：<code>git checkout v0.1.9</code>****<br>然后运行：<code>flutter doctor</code></p><h4 id="3-Waiting-for-another-flutter-command-to-release-the-startup-lock…"><a href="#3-Waiting-for-another-flutter-command-to-release-the-startup-lock…" class="headerlink" title="3. Waiting for another flutter command to release the startup lock…"></a>3. Waiting for another flutter command to release the startup lock…</h4><p><span style="color: green;">解决：删除 lockfile 文件</span></p><ul><li>打开 flutter/bin/cache/lockfile，删除</li><li>或者用命令：<code>rm ./flutter/bin/cache/lockfile</code></li></ul><h4 id="4-Flutter-android-GradleException-显示红色报错解决办法"><a href="#4-Flutter-android-GradleException-显示红色报错解决办法" class="headerlink" title="4. Flutter android GradleException 显示红色报错解决办法"></a>4. Flutter android GradleException 显示红色报错解决办法</h4><p><span style="color: green;">解决：</span></p><pre><code>throw new GradleException(...)</code></pre><p>替换</p><pre><code>throw new Exception(...)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Webpack浅学习</title>
+      <link href="2020/06/07/frontend/tool/webpack-qian-xue-xi/"/>
+      <url>2020/06/07/frontend/tool/webpack-qian-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<p>几乎每个项目用到 <code>Webpack</code>，花时间系统地学习了下。<br>第一遍学基础，整理了如下思维导图，留坑待更新。</p><p><img src="/static/xmind/200607.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思维导图 </tag>
+            
+            <tag> Webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>读《最好的告别》</title>
+      <link href="2020/05/24/book/other/zui-hao-de-gao-bie/"/>
+      <url>2020/05/24/book/other/zui-hao-de-gao-bie/</url>
+      
+        <content type="html"><![CDATA[<h3 id="这本书整体谈了什么？"><a href="#这本书整体谈了什么？" class="headerlink" title="这本书整体谈了什么？"></a>这本书整体谈了什么？</h3><p>全书穿插事例，探究了衰老与死亡以及如何优雅跨越生命终点。附读书笔记思维导图。</p><p><a href="https://book.douban.com/subject/26576861/" target="_blank" rel="noopener">豆瓣传送门</a></p><h3 id="细部说了什么？"><a href="#细部说了什么？" class="headerlink" title="细部说了什么？"></a>细部说了什么？</h3><ol><li>医学教我们认识衰老与死亡</li><li>述了美国的临终医疗、护理和养老三大话题</li><li>人生因为自主而有价值</li><li>该为死亡做些什么准备</li></ol><h3 id="它与我关系是什么？"><a href="#它与我关系是什么？" class="headerlink" title="它与我关系是什么？"></a>它与我关系是什么？</h3><p>这是本温柔而又充满力量的书。怀着对衰老与死亡的迷茫和恐惧，看完后，我坦然。<br>思考死亡是为了活的更好，推荐此书。</p><p><img src="/static/xmind/200524.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思维导图 </tag>
+            
+            <tag> 社会科学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>读《如何阅读一本书》</title>
+      <link href="2020/05/02/book/other/ru-he-yue-du-yi-ben-shu/"/>
+      <url>2020/05/02/book/other/ru-he-yue-du-yi-ben-shu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="这本书整体谈了什么？"><a href="#这本书整体谈了什么？" class="headerlink" title="这本书整体谈了什么？"></a>这本书整体谈了什么？</h3><p>一本实用型的书，核心教导了读者如何择书并主动阅读，讲述阅读的四种层次，以及每种层次所需要的、截然不同的阅读方法。部分叙述冗长重复，可选择性略读。附读书笔记思维导图。<br><a href="https://book.douban.com/subject/1013208/" target="_blank" rel="noopener">豆瓣传送门</a></p><h3 id="细部说了什么？"><a href="#细部说了什么？" class="headerlink" title="细部说了什么？"></a>细部说了什么？</h3><p>做一个有自我要求的读者，养成主动阅读的习惯。</p><ol><li>读前四问，读后解决问题</li><li>速读抓出重点，认识其值不值得再读</li><li>解构阅读以做笔记的形式</li><li>尊重并理性评断一本书</li></ol><h3 id="这本书写的有道理吗？"><a href="#这本书写的有道理吗？" class="headerlink" title="这本书写的有道理吗？"></a>这本书写的有道理吗？</h3><p>有一定的道理，给了一套系统的阅读技巧。但是作者的思想有点片面，阅读方式对文学作品也有一定的局限性。</p><h3 id="它与我关系是什么？"><a href="#它与我关系是什么？" class="headerlink" title="它与我关系是什么？"></a>它与我关系是什么？</h3><p>以前自己更多注重阅读感受，现在明白理性阅读也很重要。</p><p><img src="/static/xmind/200502.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实用型书 </tag>
+            
+            <tag> 思维导图 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初识淘客</title>
+      <link href="2020/04/25/life/parttime/chu-shi-tao-ke/"/>
+      <url>2020/04/25/life/parttime/chu-shi-tao-ke/</url>
+      
+        <content type="html"><![CDATA[<p>接触了解淘客后的第二年，觉得自己也可以试试~</p><h2 id="领劵返利教程"><a href="#领劵返利教程" class="headerlink" title="领劵返利教程"></a>领劵返利教程</h2><h3 id="图片教程"><a href="#图片教程" class="headerlink" title="图片教程"></a>图片教程</h3><p><img src="/static/life/tutorialPic.png" alt></p><h3 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h3><iframe height="498" width="100%" src="/static/life/tutorialVideo.mp4"></iframe><h2 id="联系我吧"><a href="#联系我吧" class="headerlink" title="联系我吧"></a>联系我吧</h2><p>感兴趣的话联系我吧~</p><ul><li><strong>微信</strong><br>shadow-0520</li><li><strong>QQ</strong><br><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=643382875" class="tooltipped" data-tooltip="QQ联系我: 643382875" data-position="top" data-delay="50" target="_blank" rel="noopener">643382875</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 兼职 </tag>
+            
+            <tag> 淘客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue.js之组件间通信</title>
+      <link href="2019/09/29/frontend/vue/vue-zhi-zu-jian-tong-xun/"/>
+      <url>2019/09/29/frontend/vue/vue-zhi-zu-jian-tong-xun/</url>
+      
+        <content type="html"><![CDATA[<p><code>Vue</code> 组件间的通信是 <code>Vue</code> 开发中很基础也十分重要的部分，写一个 Vue 工程，实际是在写一个个的组件。下面根据场景介绍组件间常用的几种通信方式~ 文章只贴出重点代码，详细代码戳demo链接~ 戳戳戳~</p><h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><h3 id="props-和-emits"><a href="#props-和-emits" class="headerlink" title="props 和 $emits"></a>props 和 $emits</h3><p><strong>场景1：父组件给子组件取名字（子组件的‘name’为父组件传递）</strong></p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Son</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>subcomponent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Son</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        I am a {{name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>props: ['name']</code></pre><p><code>props</code> 可以是数组或对象，为对象时允许配置高级选项，如类型检测、自定义验证和设置默认值。<br><a href="https://cn.vuejs.org/v2/guide/components-props.html" target="_blank" rel="noopener">prop更详细信息戳这里</a></p><hr><p><strong>场景2：子组件召唤父组吃饭啦（子组件的通过$emit传递事件给父组件）</strong></p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Son</span> <span class="token attr-name">@calldad</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>receivedMsg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Son</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$emit(<span class="token punctuation">'</span>calldad<span class="token punctuation">'</span>, <span class="token punctuation">'</span>Dad,开饭拉！<span class="token punctuation">'</span>)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>callDad<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><p><a href="https://codepen.io/axp97/pen/ZEzqJPa" target="_blank" rel="noopener">戳demo看效果</a></p><blockquote><p><strong>总结</strong>：父组件通过 <code>prop</code> 给子组件下发数据，子组件通过 <code>$emit</code> 触发事件给父组件发送消息，即 <code>prop</code> 向下传递，事件向上传递。</p></blockquote><h2 id="三层组件通信"><a href="#三层组件通信" class="headerlink" title="三层组件通信"></a>三层组件通信</h2><h3 id="attrs-和-listeners"><a href="#attrs-和-listeners" class="headerlink" title="$attrs 和 $listeners"></a>$attrs 和 $listeners</h3><p><strong>场景1：爷爷组件给孙组件礼物（孙组件的‘gift’为爷爷组件传递）</strong></p><p>这里孙组件要获取搭配爷爷组件传递过来的值，可以用 <strong>props逐级传递</strong> ，也可以用Vue2.4.0新增的 <code>$attrs</code> 属性。简单讲的：<code>$attrs</code> 包含所有的父作用域的绑定（除了prop传递的属性、class 和 style ）。在这个场景里，给孙组件上绑定<code>$attrs</code>，获得其父的绑定，可以简便实现。<br><a href="https://cn.vuejs.org/v2/api/#vm-attrs" target="_blank" rel="noopener">$attrs官方介绍戳这里</a></p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Son</span> <span class="token attr-name">:gift</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gift<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Son</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>data() {    return {      gift: "A lot of candy"    };},</code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grandson</span> <span class="token attr-name">v-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$attrs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Grandson</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Grandson<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Gifts from the Grandpa component: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span><span class="token punctuation">></span></span>{{gift}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>props: ["gift"]</code></pre><p><strong>场景2：孙组件召唤爷爷组件吃饭啦（孙组件触发爷爷组件事件）</strong></p><p>这里孙组件要触发爷爷组件事件，可以用 <strong>$emit逐级触发</strong> ，也可以用Vue2.4.0新增的 <code>$listeners</code> 属性。<code>$listeners</code> 包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器。<br><a href="https://cn.vuejs.org/v2/api/#vm-listeners" target="_blank" rel="noopener">$listeners官方介绍戳这里</a></p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dad<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Son</span> <span class="token attr-name">:gift</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gift<span class="token punctuation">"</span></span> <span class="token attr-name">@callgrandpa</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>callgrandpa<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Son</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>methods: {        callgrandpa(msg) {                alert(msg);        }  }</code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Son<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Grandson</span> <span class="token attr-name">v-on</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>$listeners<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Grandson</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Grandson<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>onClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>callGrandpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>methods: {        onClick() {                this.$emit("callgrandpa", "Grandpa, dinner pull!");        }}</code></pre><p><a href="https://codepen.io/axp97/pen/RwbObQY" target="_blank" rel="noopener">戳demo看效果</a></p><blockquote><p><strong>总结</strong>：三级组件通信时，当爷爷组件需要与孙组件通信，使用<code>$attrs</code>和<code>$listeners</code>更简洁。</p></blockquote><h2 id="多级组件通信"><a href="#多级组件通信" class="headerlink" title="多级组件通信"></a>多级组件通信</h2><h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><p><code>EventBus</code> 通过新建一个 <code>Vue</code> 事件 <code>bus</code> 对象，然后通过 <code>bus.$emit</code> 触发事件，<code>bus.$on</code> 监听触发的事件。</p><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// event-bus.js</span><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token keyword">export</span> <span class="token keyword">const</span> EventBus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// send messages</span>EventBus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span>channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span>…<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">// listen to receive messages</span>EventBus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span>channel<span class="token punctuation">:</span> string<span class="token punctuation">,</span> <span class="token function">callback</span><span class="token punctuation">(</span>payload1<span class="token punctuation">,</span>…<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><p>当我们需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。<br><a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">戳Vuex官网链接</a></p><blockquote><p><strong>总结</strong>：EventBus 适用于小型简单项目，中大型项目用Vuex管理，当项目过于庞大, 可将 store 分割成模块。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
