@@ -370,10 +370,6 @@ Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/思维导图/" target="_blank">
-                                <span class="chip bg-color">思维导图</span>
-                            </a>
-                        
                             <a href="/tags/Javascript/" target="_blank">
                                 <span class="chip bg-color">Javascript</span>
                             </a>
@@ -450,10 +446,9 @@ Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的�
 <li><code>reason</code> 是一个指示 promise 为什么被 rejected 的值。</li>
 </ul>
 <h4 id="2-Promise-状态"><a href="#2-Promise-状态" class="headerlink" title="2. Promise 状态"></a>2. Promise 状态</h4><ul>
-<li><strong>pending</strong><br>初始状态，可改变<br>在 resolve 和 reject 前都处于这个状态</li>
-</ul>
-<p>–&gt; resolve(value) –&gt; fulfilled<br>–&gt; reject(reason) –&gt; rejected</p>
-<ul>
+<li><p><strong>pending</strong><br>初始状态，可改变<br>在 resolve 和 reject 前都处于这个状态</p>
+<pre><code>  --&gt; resolve(value) --&gt; fulfilled
+  --&gt; reject(reason) --&gt; rejected</code></pre></li>
 <li><p><strong>fulfilled</strong><br>一次性特征：最终态，不可变<br>必须拥有一个 value 值</p>
 </li>
 <li><p><strong>rejected</strong><br>最终态，不可变<br>必须拥有一个 reason</p>
@@ -472,7 +467,8 @@ Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的�
 </ul>
 <h4 id="4-then-方法可以调用多次"><a href="#4-then-方法可以调用多次" class="headerlink" title="4. then 方法可以调用多次"></a>4. then 方法可以调用多次</h4><p>执行时机：</p>
 <p>promise –&gt; fulfilled / rejected 后，按照注册的顺序执行</p>
-<h4 id="5-返回值：promise"><a href="#5-返回值：promise" class="headerlink" title="5. 返回值：promise"></a>5. 返回值：promise</h4><p>若返回非函数：promise2 以 promise1 的 value/reson 触发 fulfilled</p>
+<h4 id="5-返回值：promise"><a href="#5-返回值：promise" class="headerlink" title="5. 返回值：promise"></a>5. 返回值：promise</h4><p>若返回非函数：</p>
+<p>promise2 以 promise1 的 value/reson 触发 fulfilled</p>
 <p>返回函数：</p>
 <p>onFulfilled / onRejected 执行，过程中抛出e，promise2 需要 reject</p>
 <p>结果为 x，调用 <code>resolvePromise</code></p>
@@ -720,10 +716,6 @@ Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的�
 
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/思维导图/" target="_blank">
-                        <span class="chip bg-color">思维导图</span>
-                    </a>
                     
                     <a href="/tags/Javascript/" target="_blank">
                         <span class="chip bg-color">Javascript</span>
