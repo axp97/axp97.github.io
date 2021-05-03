@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Promise规范及应用</title>
+      <link href="2021/05/03/frontend/relearn/promise-gui-fan-ji-ying-yong/"/>
+      <url>2021/05/03/frontend/relearn/promise-gui-fan-ji-ying-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p><strong>为什么学</strong></p><ul><li>Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的标准形式。</li><li>深入理解 Promises 运行机制</li></ul><p><strong>能学到什么</strong></p><ul><li>熟悉 Promise A+ 规范</li><li>实现一个 Promise</li></ul><h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="PromiseA-规范"><a href="#PromiseA-规范" class="headerlink" title="PromiseA+规范"></a>PromiseA+规范</h3><h4 id="1-了解术语"><a href="#1-了解术语" class="headerlink" title="1. 了解术语"></a>1. 了解术语</h4><ul><li><code>promise</code> 是一个包含 then 方法的对象或函数，该方法符合规范指定的行为。</li><li><code>thenable</code> 是一个包含 then 方法和对象或者函数。</li><li><code>value</code> 就是任意合法 JS 值。</li><li><code>exception</code> 就是 throw 语句抛出的值。</li><li><code>reason</code> 是一个指示 promise 为什么被 rejected 的值。</li></ul><h4 id="2-Promise-状态"><a href="#2-Promise-状态" class="headerlink" title="2. Promise 状态"></a>2. Promise 状态</h4><ul><li><strong>pending</strong><br>初始状态，可改变<br>在 resolve 和 reject 前都处于这个状态</li></ul><p>–&gt; resolve(value) –&gt; fulfilled<br>–&gt; reject(reason) –&gt; rejected</p><ul><li><p><strong>fulfilled</strong><br>一次性特征：最终态，不可变<br>必须拥有一个 value 值</p></li><li><p><strong>rejected</strong><br>最终态，不可变<br>必须拥有一个 reason</p></li></ul><h4 id="3-Then-方法"><a href="#3-Then-方法" class="headerlink" title="3. Then 方法"></a>3. Then 方法</h4><p>promise 必须有 then 方法，接受 <code>onFulfilled</code> 和 <code>onRejected</code> 参数。</p><h5 id="3-1-参数规范"><a href="#3-1-参数规范" class="headerlink" title="3.1. 参数规范"></a>3.1. 参数规范</h5><ul><li>函数：必须最多执行一次</li><li>非函数：忽略，返回默认值/函数</li></ul><h5 id="3-2-参数特性"><a href="#3-2-参数特性" class="headerlink" title="3.2. 参数特性"></a>3.2. 参数特性</h5><p>微任务阶段执行，执行时机：</p><ul><li>promise  –&gt; fulfilled/rejected 时，调用 onFulFilled(value) / onRejected(reson)</li><li>在 promise 变成 fulfilled/rejected 之前，不应该调用 onFulfilled/onRejected</li><li>只能调用一次</li></ul><h4 id="4-then-方法可以调用多次"><a href="#4-then-方法可以调用多次" class="headerlink" title="4. then 方法可以调用多次"></a>4. then 方法可以调用多次</h4><p>执行时机：</p><p>promise –&gt; fulfilled / rejected 后，按照注册的顺序执行</p><h4 id="5-返回值：promise"><a href="#5-返回值：promise" class="headerlink" title="5. 返回值：promise"></a>5. 返回值：promise</h4><p>若返回非函数：promise2 以 promise1 的 value/reson 触发 fulfilled</p><p>返回函数：</p><p>onFulfilled / onRejected 执行，过程中抛出e，promise2 需要 reject</p><p>结果为 x，调用 <code>resolvePromise</code></p><h4 id="6-resolvePromise-promise2-x-resolve-reject"><a href="#6-resolvePromise-promise2-x-resolve-reject" class="headerlink" title="6. resolvePromise(promise2, x, resolve, reject)"></a>6. resolvePromise(promise2, x, resolve, reject)</h4><h5 id="6-1-参数"><a href="#6-1-参数" class="headerlink" title="6.1 参数"></a>6.1 参数</h5><ul><li>promise2：当前第一个 promise 的返回</li><li>x：onFulfilled/onRejected 执行结果</li></ul><h5 id="6-2-规范"><a href="#6-2-规范" class="headerlink" title="6.2 规范"></a>6.2 规范</h5><p><strong>1. 避免死循环</strong></p><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>promise2 <span class="token operator">===</span> x<span class="token punctuation">)</span>｛    reject typeError｝</code></pre><p><strong>2. type x</strong></p><ul><li>promise，取决于 x 的状态<br>pending：promise 必须在 pending 状态，直到 x 的状态变更<br>fulfilled：value -&gt; fulfilled<br>rejected：reason -&gt; rejected</li></ul><ul><li>Object || Function<br><code>const then = x.then</code></li></ul><p>如果报错，reject reson</p><ul><li>非函数：resolve(x)</li><li>函数：then.call(x, resolvePromiseFn, rejectPromiseFn)</li></ul><h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="迭代器-Iterator"><a href="#迭代器-Iterator" class="headerlink" title="迭代器 Iterator"></a>迭代器 Iterator</h3><p>ES6 引入的一种新的遍历机制，也是一种特殊对象，它具有一些专门为迭代过程设计的专有接口。</p><p>可调用 next() 方法，返回一个当前结果对象。</p><p><strong>next()方法：</strong></p><p>value：当前属性的值<br>done：用于判断是否遍历结束，当没有更多可返回的数据时，返回true</p><h3 id="生成器-Generator"><a href="#生成器-Generator" class="headerlink" title="生成器 Generator"></a>生成器 Generator</h3><p>生成器是一种返回迭代器的函数，通过function关键字后的星号(*)来表示，函数中会用到新的关键字yield。星号可以紧挨着function关键字，也可以在中间添加一个空格.</p><h3 id="Async-和-Await"><a href="#Async-和-Await" class="headerlink" title="Async 和 Await"></a>Async 和 Await</h3><p>实际：Promise 语法糖，同步的形式写</p><p><img src="/static/xmind/frontEnd/relearn/promise.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思维导图 </tag>
+            
+            <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue详细上手指北</title>
       <link href="2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/"/>
       <url>2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/</url>
@@ -70,9 +99,9 @@
       
         <tags>
             
-            <tag> 思维导图 </tag>
-            
             <tag> Webpack </tag>
+            
+            <tag> 思维导图 </tag>
             
         </tags>
       
@@ -124,9 +153,9 @@
       
         <tags>
             
-            <tag> 实用型书 </tag>
-            
             <tag> 思维导图 </tag>
+            
+            <tag> 实用型书 </tag>
             
         </tags>
       
