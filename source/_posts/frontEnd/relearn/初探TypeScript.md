@@ -16,4 +16,6 @@ tags:
 
 ## 知识要点
 
+### type 和 interface的异同
+
 ![xmind总结](/static/xmind/frontEnd/relearn/ts.png)
