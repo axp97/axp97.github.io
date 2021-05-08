@@ -172,17 +172,17 @@ if (promise2 === x)｛
 **3. 添加 Promise 入参，函数同步执行，异常需reject**
 
   ```js
-    constructor(fn) {
-      this.status = PENDING;
-      this.value = null;
-      this.reason = null;
+  constructor(fn) {
+    this.status = PENDING;
+    this.value = null;
+    this.reason = null;
 
-      try {
-        // bind: 改变 this 指向，返回一个函数
-        fn(this.resolve.bind(this), this.reject.bind(this))
-      } catch (e) {
-        this.reject(e);
-      }
+    try {
+      // bind: 改变 this 指向，返回一个函数
+      fn(this.resolve.bind(this), this.reject.bind(this))
+    } catch (e) {
+      this.reject(e);
+    }
   }
   ```
 
@@ -190,7 +190,7 @@ if (promise2 === x)｛
 
   4.1 实现 then 逻辑
 
-  ```js
+    ```js
     // then接收两个参数, onFulfilled 和 onRejected
     then(onFulfilled, onRejected) {
       //检查并处理参数, 之前提到的如果不是function, 就忽略. 这个忽略指的是原样返回value或者reason.
@@ -200,72 +200,29 @@ if (promise2 === x)｛
       const rejectedFn = this.isFunction(onRejected) ? onRejected : (reason) => {
         throw reason
       };
-
-      const fulFilledFnWithCatch = (resolve, reject, newPromise) => {
-        queueMicrotask(() => {
-          // onFulfilled/onRejected 抛出异常：则promise2 拒绝执行，并返回拒因 e。
-          try {
-            if (!this.isFunction(onFulfilled)) {
-              // promise1 成功执行： promise2 必须成功执行并返回相同的值
-              resolve(this.value);
-            } else {
-              const x = fulFillFn(this.value);
-              this.resolvePromise(newPromise, x, resolve, reject);
-            }
-          } catch (e){
-            reject(e);
-          }
-        })
-      }
-
-      const rejectedFnWithCatch = (resolve, reject, newPromise) => {
-        queueMicrotask(() => {
-          try {
-            if (!this.isFunction(onRejected)) {
-              reject(this.reason)
-            } else {
-              const x = rejectFn(this.reason);
-              this.resolvePromise(newPromise, x, resolve, reject);
-            }
-          } catch {
-            reject(e);
-          }
-        })
-      }
-
       // 根据当前 promise 的状态, 调用不同的函数
       switch (this.status) {
         case FULFILLED: {
-          const newPromise = new MPromise1((resolve, reject) => {
-            fulFilledFnWithCatch(resolve, reject, newPromise);
-          })
-          return newPromise;
+          fulFilledFn(this.value);
+          break;
         }
         case REJECTED: {
-          const newPromise = new MPromise1((resolve, reject) => {
-            rejectedFnWithCatch(resolve, reject, newPromise);
-          })
+          rejectedFn(this.reason);
           break;
         }
         // then 可以链式调用，存储回调
         case PENDING: {
-          const newPromise =  new MPromise1((resolve, reject) => {
-            this.FULFILLED_CALLBACK_LIST.push(() =>
-              fulFilledFnWithCatch(resolve, reject, newPromise)
-            );
-            this.REJECTED_CALLBACK_LIST.push(() =>
-              rejectedFnWithCatch(resolve, reject, newPromise)
-            );
-          })
-          return newPromise;
+          this.FULFILLED_CALLBACK_LIST.push(realOnFulfilled);
+          this.REJECTED_CALLBACK_LIST.push(realOnRejected);
+          break;
         }
       }
     }
-  ```
+    ```
 
   4.2 status 发生变化时候去执行所有的回调
 
-  ```js
+    ```js
     get status() {
       return this._status;
     }
@@ -287,67 +244,13 @@ if (promise2 === x)｛
         }
       }
     }
-  ```
+    ```
 
 **5. 实现 resolvePromise 方法**
 
-  ```js
-    resolvePromise(newPromise, x, resolve, reject) {
-    // 一层一层找，直到 x 不是 function/object/promise，resolve 出去
-    // 中间碰到报错都 reject 出去
-    // 这是为了防止死循环
-    if (newPromise === x) {
-      return reject(new TypeError('The promise and the return value are the same'))
-    }
-    if (x instanceof MPromise1) {
-      // 这个 if 跟下面判断then然后拿到执行其实重复了，可有可无
-      x.then((y) => {
-        // 这里怎么还是 newPromise 呢？应该是新的 promise ?
-        this.resolvePromise(newPromise, y, resolve, reject);
-      }, reject)
-    } else if (typeof x === 'object' || this.isFunction(x)) {
-      if (x === null) {
-        return resolve(x);
-      }
+**6. Promise.reject和Promise.resolve及catch实现**
 
-      let then = null;
-
-      try {
-        then = x.then;
-      } catch (error) {
-        return reject(error);
-      }
-
-      if (this.isFunction(x)) {
-        let called = false;
-        try {
-          // then 的 this 本来指向就为 x
-          then.call(
-            x,
-            (y) => {
-              if (called) return;
-              called = true;
-              this.resolvePromise(newPromise, y, resolve, reject);
-            },
-            (r) => {
-              if (called) return;
-              called = true;
-              reject(r);
-            }
-          );
-        } catch (error) {
-          if (called) return;
-          reject(error);
-        }
-      } else {
-        resolve(x);
-      }
-    } else {
-      resolve(x);
-    }
-
-  }
-  ```
+**7. promise.race和promise.all实现**
 
 #### 2. 贴下完整代码
 
@@ -424,7 +327,6 @@ class MPromise {
 
     // 后续优化：用装饰器能少写一个try catch；isFunction精简一个
     const fulFilledFnWithCatch = (resolve, reject, newPromise) => {
-      // onFulfilled 和 onRejected 是微任务
       queueMicrotask(() => {
         try {
           if (!this.isFunction(onFulfilled)) {
@@ -561,6 +463,27 @@ class MPromise {
           reject(reason);
       });
   }
+
+  // static race(promiseList) {
+  //   return new MPromise((resolve, reject) => {
+  //       const length = promiseList.length;
+
+  //       if (length === 0) {
+  //           return resolve();
+  //       } else {
+  //           for (let i = 0; i < length; i++) {
+  //               MPromise.resolve(promiseList[i]).then(
+  //                   (value) => {
+  //                       return resolve(value);
+  //                   },
+  //                   (reason) => {
+  //                       return reject(reason);
+  //                   });
+  //           }
+  //       }
+  //   });
+  // }
+
 }
   ```
 
