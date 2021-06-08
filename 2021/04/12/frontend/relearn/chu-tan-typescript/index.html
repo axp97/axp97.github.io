@@ -10,8 +10,8 @@
 面试题及实战
 了解 ts 基本原理
 
-知识要点
-">
+知识要点0. 准备npm install -g typescript
+tsc hello.tsTypeScript 基础方面总结请跳到文底看 xmind 文件呢，或者阅览官方文档。贴">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -401,14 +401,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        22
+                        536
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -429,7 +429,117 @@
 <li>面试题及实战</li>
 <li>了解 ts 基本原理</li>
 </ul>
-<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><p><img src="/static/xmind/frontEnd/relearn/ts.png" alt="xmind总结"></p>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="0-准备"><a href="#0-准备" class="headerlink" title="0. 准备"></a>0. 准备</h3><pre><code>npm install -g typescript
+tsc hello.ts</code></pre><p>TypeScript 基础方面总结请跳到文底看 xmind 文件呢，或者阅览<a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">官方文档</a>。<br>贴心准备：<a href="https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html" target="_blank" rel="noopener">TypeScript中文网</a></p>
+<h3 id="1-type-和-interface-的异同"><a href="#1-type-和-interface-的异同" class="headerlink" title="1. type 和 interface 的异同"></a>1. type 和 interface 的异同</h3><p>用interface描述数据结构，用type描述类型</p>
+<p><strong>相同点</strong></p>
+<ul>
+<li>都可以描述一个对象或者函数</li>
+<li>都允许扩展 extends：interface 和 type 都可以拓展，并且两者并不是相互独立的，也就是说 interface 可以 extends type, type 也可以 extends interface ，语法不同。</li>
+</ul>
+<p><strong>不同点</strong></p>
+<ul>
+<li><p>type 可以声明基本类型别名，联合类型，元组等类型</p>
+</li>
+<li><p>type 语句中还可以使用typeof获取实例的类型进行赋值</p>
+</li>
+<li><p>interface 能够声明合并</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 1. 都可以描述一个对象或者函数</span>
+<span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+  age<span class="token punctuation">:</span> number
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">SetUser</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>name<span class="token punctuation">:</span> string<span class="token punctuation">,</span> age<span class="token punctuation">:</span> number<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+type User <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+  age<span class="token punctuation">:</span> number
+<span class="token punctuation">}</span>
+
+type SetUser <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token punctuation">:</span> string<span class="token punctuation">,</span> age<span class="token punctuation">:</span> number<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 2. 都允许扩展</span>
+<span class="token comment" spellcheck="true">// 2.1 interface extends interface</span>
+<span class="token keyword">interface</span> <span class="token class-name">Name</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Name</span> <span class="token punctuation">{</span>
+  age<span class="token punctuation">:</span> number
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 2.2 type extends type</span>
+type Name <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+<span class="token punctuation">}</span>
+
+type User <span class="token operator">=</span> Name <span class="token operator">&amp;</span> <span class="token punctuation">{</span> age<span class="token punctuation">:</span> number <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 2.3 interface extends type</span>
+
+type Name <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token keyword">extends</span> <span class="token class-name">Name</span> <span class="token punctuation">{</span>
+  age<span class="token punctuation">:</span> number
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 2.4 type extends interface</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Name</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> string
+<span class="token punctuation">}</span>
+
+type User <span class="token operator">=</span> Name <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+  age<span class="token punctuation">:</span> number
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 3. 只有 type 可以做的</span>
+<span class="token comment" spellcheck="true">// 3.1 type 声明基本类型别名</span>
+type Name <span class="token operator">=</span> string
+
+<span class="token comment" spellcheck="true">// 3.2 type 声明联合类型</span>
+<span class="token keyword">interface</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+  <span class="token function">wang</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
+  <span class="token function">miao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+type Pet <span class="token operator">=</span> Dog <span class="token operator">|</span> Cat
+
+<span class="token comment" spellcheck="true">// 3.2 type 声明元组类型，具体定义数组每个位置的类型</span>
+type PetList <span class="token operator">=</span> <span class="token punctuation">[</span>Dog<span class="token punctuation">,</span> Pet<span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">// 4. 当你想获取一个变量的类型时，使用 typeof</span>
+<span class="token keyword">let</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">creatElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+type B <span class="token operator">=</span> <span class="token keyword">typeof</span> div
+</code></pre>
+</li>
+</ul>
+<h3 id="2-如何基于一个已有类型-扩展出一个大部分内容相似-但是有部分区别的类型"><a href="#2-如何基于一个已有类型-扩展出一个大部分内容相似-但是有部分区别的类型" class="headerlink" title="2. 如何基于一个已有类型, 扩展出一个大部分内容相似, 但是有部分区别的类型?"></a>2. 如何基于一个已有类型, 扩展出一个大部分内容相似, 但是有部分区别的类型?</h3><p>  可以通过 Pick 和 Omit</p>
+<pre class=" language-ts"><code class="language-ts">  <span class="token keyword">interface</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token keyword">string</span>
+    sex<span class="token punctuation">:</span> <span class="token keyword">number</span>
+    height<span class="token punctuation">:</span> <span class="token keyword">string</span>
+  <span class="token punctuation">}</span>
+
+  type Sex <span class="token operator">=</span> Pick<span class="token operator">&lt;</span>Test<span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token operator">></span>
+
+  <span class="token keyword">const</span> a<span class="token punctuation">:</span> Sex <span class="token operator">=</span> <span class="token punctuation">{</span> sex<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span>
+
+  type WithoutSex <span class="token operator">=</span> Omit<span class="token operator">&lt;</span>Test<span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token operator">></span>
+
+  <span class="token keyword">const</span> b<span class="token punctuation">:</span> WithoutSex <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Axp'</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token string">'158cm'</span> <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="3-什么是泛型-泛型的具体使用"><a href="#3-什么是泛型-泛型的具体使用" class="headerlink" title="3. 什么是泛型, 泛型的具体使用?"></a>3. 什么是泛型, 泛型的具体使用?</h3><p>  泛型是指在定义函数、接口或类的时候，不预先指定具体的类型，使用时再去指定类型的一种特性。</p>
+<p>  可以把泛型理解为代表类型的参数</p>
+<p><img src="/static/xmind/frontEnd/relearn/ts.png" alt="xmind总结"></p>
 
             </div>
             <hr/>
@@ -826,7 +936,7 @@
     
                 
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">4.9k</span>
+                <span class="white-color">6.6k</span>
                 
     
                 <br>
