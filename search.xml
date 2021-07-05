@@ -4,35 +4,6 @@
   
     
     <entry>
-      <title>ESNext规范</title>
-      <link href="2021/06/06/frontend/relearn/esnext-gui-fan/"/>
-      <url>2021/06/06/frontend/relearn/esnext-gui-fan/</url>
-      
-        <content type="html"><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p><strong>为什么学</strong></p><ul><li>编译原理是前端框架的理论基石之一，了解编译原理能够对所接触的框架有更充分的认识。</li><li>能对 Babel 等转译器进行深入掌握。</li></ul><p><strong>能学到什么</strong></p><ul><li>编译原理入门</li><li>实现一个 Compiler</li></ul><h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-编译基础"><a href="#一、-编译基础" class="headerlink" title="一、 编译基础"></a>一、 编译基础</h3><h4 id="1-本质"><a href="#1-本质" class="headerlink" title="1. 本质"></a>1. 本质</h4><p>编译的本质其实就是将一个东西转成另一个东西，套入编码层面，即将「来源代码」转成「目标语言」。</p><h4 id="2-流程"><a href="#2-流程" class="headerlink" title="2. 流程"></a>2. 流程</h4><p>编译器接收字符串，编译流程一般分为 4 步：首先进行 <code>词法分析</code> ，将字符串拆解成一个个 token 放入数组；然后对数组进行 <code>语法分析</code> ，遍历 token，合成 AST 树；接着到了 <code>转换阶段</code> ，将已有的 AST 树进行动态修改，生成一个新的 AST 树；最后根据新 AST 树 <code>生成代码</code> 。</p><h3 id="二、-实现一个-Compiler"><a href="#二、-实现一个-Compiler" class="headerlink" title="二、 实现一个 Compiler"></a>二、 实现一个 Compiler</h3><p>待更新…</p><h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><p><img src="/static/xmind/frontEnd/relearn/compiler.png" alt="xmind总结"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端进阶 </tag>
-            
-            <tag> Vue </tag>
-            
-            <tag> 编译原理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>编译原理</title>
       <link href="2021/06/06/frontend/relearn/bian-yi-yuan-li/"/>
       <url>2021/06/06/frontend/relearn/bian-yi-yuan-li/</url>
@@ -105,9 +76,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -132,13 +103,13 @@
       
         <tags>
             
+            <tag> 前端进阶 </tag>
+            
             <tag> ECMAScript </tag>
             
             <tag> ES6 </tag>
             
             <tag> ESNext </tag>
-            
-            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -163,9 +134,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -190,9 +161,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -217,9 +188,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -244,9 +215,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -271,9 +242,9 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
