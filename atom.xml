@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://axp97.github.io/"/>
-  <updated>2021-06-08T03:05:14.434Z</updated>
+  <updated>2021-07-04T01:51:52.545Z</updated>
   <id>http://axp97.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>编译原理</title>
-    <link href="http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/"/>
-    <id>http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/</id>
+    <title>ESNext规范</title>
+    <link href="http://axp97.github.io/2021/06/06/frontend/relearn/esnext-gui-fan/"/>
+    <id>http://axp97.github.io/2021/06/06/frontend/relearn/esnext-gui-fan/</id>
     <published>2021-06-06T02:30:00.000Z</published>
-    <updated>2021-06-08T03:05:14.434Z</updated>
+    <updated>2021-07-04T01:51:52.545Z</updated>
     
     <summary type="html">
     
@@ -41,7 +41,69 @@
     
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
     
+      <category term="Vue" scheme="http://axp97.github.io/tags/Vue/"/>
+    
       <category term="编译原理" scheme="http://axp97.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编译原理</title>
+    <link href="http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/"/>
+    <id>http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/</id>
+    <published>2021-06-06T02:30:00.000Z</published>
+    <updated>2021-06-12T10:03:30.861Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Vue" scheme="http://axp97.github.io/tags/Vue/"/>
+    
+      <category term="编译原理" scheme="http://axp97.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>路由 &amp; 异步组件</title>
+    <link href="http://axp97.github.io/2021/05/10/frontend/relearn/lu-you-yi-bu-zu-jian/"/>
+    <id>http://axp97.github.io/2021/05/10/frontend/relearn/lu-you-yi-bu-zu-jian/</id>
+    <published>2021-05-10T14:00:00.000Z</published>
+    <updated>2021-06-12T10:07:26.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Vue" scheme="http://axp97.github.io/tags/Vue/"/>
     
   </entry>
   
@@ -69,7 +131,44 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
       <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESNext规范</title>
+    <link href="http://axp97.github.io/2021/04/25/frontend/relearn/esnext-gui-fan-xiang-jie/"/>
+    <id>http://axp97.github.io/2021/04/25/frontend/relearn/esnext-gui-fan-xiang-jie/</id>
+    <published>2021-04-25T01:00:00.000Z</published>
+    <updated>2021-07-05T03:00:14.568Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;了解 ECMAScript 规范发展&lt;/li&gt;
+&lt;li&gt;熟悉 ES6 及以后新增的常用 API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="ECMAScript" scheme="http://axp97.github.io/tags/ECMAScript/"/>
+    
+      <category term="ES6" scheme="http://axp97.github.io/tags/ES6/"/>
+    
+      <category term="ESNext" scheme="http://axp97.github.io/tags/ESNext/"/>
     
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
     
@@ -101,9 +200,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
@@ -135,9 +234,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
@@ -165,9 +264,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
@@ -196,9 +295,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
@@ -227,9 +326,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
