@@ -26,7 +26,7 @@ tags:
 ### 一、 解读 Promise/A+规范
 
 [规范内容](https://promisesaplus.com/)
-[【翻译】Promises/A+规范)](https://www.ituring.com.cn/article/66566)
+[【翻译】Promises/A+规范](https://www.ituring.com.cn/article/66566)
 
 #### 1. 了解术语
 
