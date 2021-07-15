@@ -4,23 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="浅谈前端状态管理, 安小盼, AXP">
+    <meta name="keywords" content="Vue原理之响应式设计, 安小盼, AXP">
     <meta name="description" content="目标为什么学
 
-状态管理是前端核心部分
-深入理解 JS 模块化
+响应式是 Vue 最独特的特性之一
 
 能学到什么
 
-熟悉状态管理的思想
-手写实现简单的 Vue 状态管理
+Vue 的响应式原理
 
-知识要点状态管理管理一个项目的数据，分为中心化和去中心化。
-思想：
-基础功能：
-
-实现一个对象
-给对象定">
+知识要点待更新…
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>浅谈前端状态管理 | 安小盼的博客</title>
+    <title>Vue原理之响应式设计 | 安小盼的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,7 +258,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        浅谈前端状态管理
+                        Vue原理之响应式设计
                     </div>
                 </div>
             </div>
@@ -383,12 +377,8 @@
                                 <span class="chip bg-color">Vue</span>
                             </a>
                         
-                            <a href="/tags/Vuex/" target="_blank">
-                                <span class="chip bg-color">Vuex</span>
-                            </a>
-                        
-                            <a href="/tags/状态管理/" target="_blank">
-                                <span class="chip bg-color">状态管理</span>
+                            <a href="/tags/响应式设计/" target="_blank">
+                                <span class="chip bg-color">响应式设计</span>
                             </a>
                         
                     </div>
@@ -411,14 +401,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-16
+                    2021-05-31
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        163
+                        38
                     </div>
                     
 
@@ -443,34 +433,13 @@
             <div id="articleContent">
                 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p><strong>为什么学</strong></p>
 <ul>
-<li>状态管理是前端核心部分</li>
-<li>深入理解 JS 模块化</li>
+<li>响应式是 Vue 最独特的特性之一</li>
 </ul>
 <p><strong>能学到什么</strong></p>
 <ul>
-<li>熟悉状态管理的思想</li>
-<li>手写实现简单的 Vue 状态管理</li>
+<li>Vue 的响应式原理</li>
 </ul>
-<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h3><p>管理一个项目的数据，分为中心化和去中心化。</p>
-<p><strong>思想：</strong></p>
-<p><strong>基础功能：</strong></p>
-<ol>
-<li>实现一个对象</li>
-<li>给对象定义更改的方法<ul>
-<li>考虑同步操作和异步操作</li>
-</ul>
-</li>
-<li>提供给用户调用的方法</li>
-<li>当数据变了引发视图更新</li>
-</ol>
-<p><strong>锦上添花：</strong></p>
-<ul>
-<li>分形，拆分多个 Module</li>
-<li>插件机制</li>
-<li>辅助函数</li>
-</ul>
-<h3 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h3><h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><p>待更新…</p>
-<p><img src="/static/xmind/frontEnd/relearn/modular.png" alt="xmind总结"></p>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><p>待更新…</p>
 
             </div>
             <hr/>
@@ -618,7 +587,7 @@
                     </span>
                     <a href="http://axp97.github.io" class="b-link-green">安小盼的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/05/16/frontend/relearn/zhuang-tai-guan-li/" class="b-link-green">浅谈前端状态管理</a>
+                    <a href="/2021/05/31/frontend/relearn/vue-yuan-li-zhi-xiang-ying-shi-she-ji/" class="b-link-green">Vue原理之响应式设计</a>
                 </p>
             </div>
         </div>
@@ -643,13 +612,80 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/30/frontend/relearn/vue-yuan-ma-zhi-diff-suan-fa/">
+                <a href="/2021/06/06/frontend/relearn/bian-yi-yuan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Vue源码之diff算法">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="编译原理">
                         
-                        <span class="card-title">Vue源码之diff算法</span>
+                        <span class="card-title">编译原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            目标为什么学
+
+编译原理是前端框架的理论基石之一，了解编译原理能够对所接触的框架有更充分的认识
+能对 Babel 等转译器进行深入掌握
+
+能学到什么
+
+编译原理入门
+实现一个 Compiler
+
+知识要点一、 编译基础1. 本质编译的本质其
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/前端进阶/" target="_blank">
+                        <span class="chip bg-color">前端进阶</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/编译原理/" target="_blank">
+                        <span class="chip bg-color">编译原理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05/30/frontend/relearn/vue-yuan-li-zhi-diff-suan-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Vue原理之diff算法">
+                        
+                        <span class="card-title">Vue原理之diff算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -670,9 +706,9 @@ React 提出近代同层比较算
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -698,68 +734,6 @@ React 提出近代同层比较算
                     
                     <a href="/tags/diff/" target="_blank">
                         <span class="chip bg-color">diff</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/10/frontend/relearn/lu-you-yi-bu-zu-jian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="路由 & 异步组件">
-                        
-                        <span class="card-title">路由 & 异步组件</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            目标为什么学
-
-了解路由发展，深入前端路由原理。
-
-能学到什么
-
-手写实现路由
-
-知识要点一、 路由基础1. 历史背景1.1. 前后端开发未分离
-服务端访问/控制路由。前端/客户端发送http 请求，服务端根据 url 路径的不同，返回不同
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/前端进阶/" target="_blank">
-                        <span class="chip bg-color">前端进阶</span>
-                    </a>
-                    
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -877,7 +851,7 @@ React 提出近代同层比较算
     
                 
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14k</span>
+                <span class="white-color">16.1k</span>
                 
     
                 <br>
