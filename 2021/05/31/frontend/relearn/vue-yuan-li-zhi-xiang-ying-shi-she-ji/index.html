@@ -11,10 +11,10 @@
 
 能学到什么
 
-Vue 的响应式原理
+深入响应式原理
+手撸 Vue 响应式原理
 
-知识要点待更新…
-">
+知识要点一、 原理总结我们都知道，只要在 Vue 实例中声明过的数据，那么这个数据就是响应式的。也就是当你修改数据时，视图会进行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -408,7 +408,7 @@ Vue 的响应式原理
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        38
+                        174
                     </div>
                     
 
@@ -437,9 +437,25 @@ Vue 的响应式原理
 </ul>
 <p><strong>能学到什么</strong></p>
 <ul>
-<li>Vue 的响应式原理</li>
+<li>深入响应式原理</li>
+<li>手撸 Vue 响应式原理</li>
 </ul>
-<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><p>待更新…</p>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-原理总结"><a href="#一、-原理总结" class="headerlink" title="一、 原理总结"></a>一、 原理总结</h3><p>我们都知道，只要在 Vue 实例中声明过的数据，那么这个数据就是响应式的。也就是当你修改数据时，视图会进行更新。这是我们说的响应式。</p>
+<p><code>Vue2.x</code> 通过 <code>Object.defineProperty()</code> 做数据劫持，而 <code>Vue3</code> 通过 <code>Proxy</code> 做数据代理，从而捕捉到对数据的 <code>get</code> 和 <code>set</code> 。</p>
+<p>本质的思想都是在 <code>getter</code> 时候收集副作用，在 <code>setter</code> 时候触发副作用执行。</p>
+<h3 id="二、-Vue2-响应式实现"><a href="#二、-Vue2-响应式实现" class="headerlink" title="二、 Vue2 响应式实现"></a>二、 Vue2 响应式实现</h3><!-- #### 1. 整体结构
+
+申明整体核心类及方法，确认整体框架结构：
+
+* index.html 主页面
+* vue.js Vue主文件
+* compiler.js 编译模版，解析指令（v-model等）
+* dep.js 收集依赖关系，存储观察者，以发布订阅模式实现
+* observer.js 实现数据劫持
+* watcher.js 观察者对象类 -->
+
+<p><img src="/static/front-end/relearn/reactive-vue2.png" alt="Vue2响应式原理"></p>
+<p>待更新…</p>
 
             </div>
             <hr/>
@@ -851,7 +867,7 @@ React 提出近代同层比较算
     
                 
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">16.1k</span>
+                <span class="white-color">16.2k</span>
                 
     
                 <br>
