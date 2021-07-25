@@ -11,8 +11,8 @@
 手写实现 new 函数
 深入继承：多种继承的实现
 
-知识要点一、 面向对象编程实际是一种思想。当问题复杂或参与方较多建议使用，她你能简化问题，方便后期扩展和维护。
-二、 原型及原型">
+知识要点一、 面向对象编程实际是一种思想。当问题复杂或参与方较多建议使用，能简化问题，方便后期扩展和维护。
+二、 原型及原型链原">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -428,18 +428,18 @@
                 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
 <li>清楚面向对象编程思想</li>
 <li>深入原型及原型链： 对象间关系</li>
-<li>手写实现 new 函数</li>
+<li>手写实现 <code>new</code> 函数</li>
 <li>深入继承：多种继承的实现</li>
 </ul>
-<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-面向对象编程"><a href="#一、-面向对象编程" class="headerlink" title="一、 面向对象编程"></a>一、 面向对象编程</h3><p>实际是一种思想。当问题复杂或参与方较多建议使用，她你能简化问题，方便后期扩展和维护。</p>
-<h3 id="二、-原型及原型链"><a href="#二、-原型及原型链" class="headerlink" title="二、 原型及原型链"></a>二、 原型及原型链</h3><p>原型链实际是对象间的关系：由 <strong>proto</strong> 和 prototype 连接的链条。</p>
-<h4 id="1-手写实现-new-函数"><a href="#1-手写实现-new-函数" class="headerlink" title="1. 手写实现 new 函数"></a>1. 手写实现 new 函数</h4><p>在内存中开辟一段空间，添加原型，将 this 挂在这个对象上</p>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-面向对象编程"><a href="#一、-面向对象编程" class="headerlink" title="一、 面向对象编程"></a>一、 面向对象编程</h3><p>实际是一种思想。当问题复杂或参与方较多建议使用，能简化问题，方便后期扩展和维护。</p>
+<h3 id="二、-原型及原型链"><a href="#二、-原型及原型链" class="headerlink" title="二、 原型及原型链"></a>二、 原型及原型链</h3><p>原型链实际是对象间的关系：由 <code>__proto__</code> 和 <code>prototype</code> 连接的链条。</p>
+<h4 id="1-手写实现-new-函数"><a href="#1-手写实现-new-函数" class="headerlink" title="1. 手写实现 new 函数"></a>1. 手写实现 new 函数</h4><p>在内存中开辟一段空间，添加原型，将 <code>this</code> 挂在这个对象上</p>
 <p><strong>具体</strong></p>
 <ol>
-<li>用new Object() 的方式新建了一个对象 obj</li>
-<li>取第一个参数，即传入的构造函数。此外因 shift 会修改原数组，所以 arguments 会被去除第一个参数</li>
+<li>用 <code>new Object()</code> 的方式新建了一个对象 obj</li>
+<li>取第一个参数，即传入的构造函数。此外因 <code>shift</code> 会修改原数组，所以 <code>arguments</code> 会被去除第一个参数</li>
 <li>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性</li>
-<li>使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性</li>
+<li>使用 <code>apply</code>，改变构造函数 <code>this</code> 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性</li>
 <li>返回 obj</li>
 </ol>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">objectFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -474,7 +474,7 @@ Student<span class="token punctuation">.</span>prototype<span class="token punct
 <li>方法都在构造函数中定义，每次创建实例都会创建一遍方法。</li>
 <li>函数是引用类型，父类的函数在子类的实例下不共享</li>
 </ol>
-<h4 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h4><p>原型式继承和构造函数继承的组合，兼具了二者的优点。<br>普通属性 使用 构造函数继承，函数 使用 原型链继承</p>
+<h4 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h4><p>原型式继承和构造函数继承的组合，兼具了二者的优点。<br>普通属性使用构造函数继承，函数使用原型链继承</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>hobbies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music'</span><span class="token punctuation">,</span><span class="token string">'reading'</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
@@ -762,6 +762,10 @@ ES6：指 2015
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/前端进阶/" target="_blank">
+                        <span class="chip bg-color">前端进阶</span>
+                    </a>
+                    
                     <a href="/tags/ECMAScript/" target="_blank">
                         <span class="chip bg-color">ECMAScript</span>
                     </a>
@@ -772,10 +776,6 @@ ES6：指 2015
                     
                     <a href="/tags/ESNext/" target="_blank">
                         <span class="chip bg-color">ESNext</span>
-                    </a>
-                    
-                    <a href="/tags/前端进阶/" target="_blank">
-                        <span class="chip bg-color">前端进阶</span>
                     </a>
                     
                 </div>
