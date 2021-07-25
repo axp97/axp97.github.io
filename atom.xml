@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://axp97.github.io/"/>
-  <updated>2021-07-14T16:39:54.614Z</updated>
+  <updated>2021-07-24T07:22:39.717Z</updated>
   <id>http://axp97.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读《你不知道的JavaScript》</title>
+    <link href="http://axp97.github.io/2021/07/24/book/front-end/du-ni-bu-zhi-dao-de-javascript-shang-juan/"/>
+    <id>http://axp97.github.io/2021/07/24/book/front-end/du-ni-bu-zhi-dao-de-javascript-shang-juan/</id>
+    <published>2021-07-24T04:32:00.000Z</published>
+    <updated>2021-07-24T07:22:39.717Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;这本书整体谈了什么？&quot;&gt;&lt;a href=&quot;#这本书整体谈了什么？&quot; class=&quot;headerlink&quot; title=&quot;这本书整体谈了什么？&quot;&gt;&lt;/a&gt;这本书整体谈了什么？&lt;/h2&gt;&lt;p&gt;深入 &lt;code&gt;JavaScript&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="http://axp97.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    
+      <category term="JavaScript" scheme="http://axp97.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>2021年驾考记录</title>
@@ -49,10 +78,10 @@
   
   <entry>
     <title>编译原理</title>
-    <link href="http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/"/>
-    <id>http://axp97.github.io/2021/06/06/frontend/relearn/bian-yi-yuan-li/</id>
+    <link href="http://axp97.github.io/2021/06/06/front-end/relearn/bian-yi-yuan-li/"/>
+    <id>http://axp97.github.io/2021/06/06/front-end/relearn/bian-yi-yuan-li/</id>
     <published>2021-06-06T02:30:00.000Z</published>
-    <updated>2021-07-17T09:31:43.780Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -80,8 +109,8 @@
   
   <entry>
     <title>Vue原理之响应式设计</title>
-    <link href="http://axp97.github.io/2021/05/31/frontend/relearn/vue-yuan-li-zhi-xiang-ying-shi-she-ji/"/>
-    <id>http://axp97.github.io/2021/05/31/frontend/relearn/vue-yuan-li-zhi-xiang-ying-shi-she-ji/</id>
+    <link href="http://axp97.github.io/2021/05/31/front-end/relearn/vue-yuan-li-zhi-xiang-ying-shi-she-ji/"/>
+    <id>http://axp97.github.io/2021/05/31/front-end/relearn/vue-yuan-li-zhi-xiang-ying-shi-she-ji/</id>
     <published>2021-05-31T00:00:00.000Z</published>
     <updated>2021-07-17T09:37:38.092Z</updated>
     
@@ -113,10 +142,10 @@
   
   <entry>
     <title>Vue原理之diff算法</title>
-    <link href="http://axp97.github.io/2021/05/30/frontend/relearn/vue-yuan-li-zhi-diff-suan-fa/"/>
-    <id>http://axp97.github.io/2021/05/30/frontend/relearn/vue-yuan-li-zhi-diff-suan-fa/</id>
+    <link href="http://axp97.github.io/2021/05/30/front-end/relearn/vue-yuan-li-zhi-diff-suan-fa/"/>
+    <id>http://axp97.github.io/2021/05/30/front-end/relearn/vue-yuan-li-zhi-diff-suan-fa/</id>
     <published>2021-05-30T02:30:00.000Z</published>
-    <updated>2021-07-15T00:40:12.046Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -144,10 +173,10 @@
   
   <entry>
     <title>Vue.js之状态管理</title>
-    <link href="http://axp97.github.io/2021/05/16/frontend/relearn/vue.js-zhi-zhuang-tai-guan-li/"/>
-    <id>http://axp97.github.io/2021/05/16/frontend/relearn/vue.js-zhi-zhuang-tai-guan-li/</id>
+    <link href="http://axp97.github.io/2021/05/16/front-end/relearn/vue.js-zhi-zhuang-tai-guan-li/"/>
+    <id>http://axp97.github.io/2021/05/16/front-end/relearn/vue.js-zhi-zhuang-tai-guan-li/</id>
     <published>2021-05-16T14:25:00.000Z</published>
-    <updated>2021-07-15T08:49:39.894Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -177,10 +206,10 @@
   
   <entry>
     <title>路由 &amp; 异步组件</title>
-    <link href="http://axp97.github.io/2021/05/10/frontend/relearn/lu-you-yi-bu-zu-jian/"/>
-    <id>http://axp97.github.io/2021/05/10/frontend/relearn/lu-you-yi-bu-zu-jian/</id>
+    <link href="http://axp97.github.io/2021/05/10/front-end/relearn/lu-you-yi-bu-zu-jian/"/>
+    <id>http://axp97.github.io/2021/05/10/front-end/relearn/lu-you-yi-bu-zu-jian/</id>
     <published>2021-05-10T14:00:00.000Z</published>
-    <updated>2021-07-15T00:36:53.488Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -208,10 +237,10 @@
   
   <entry>
     <title>this指针 &amp; 闭包 &amp; 作用域</title>
-    <link href="http://axp97.github.io/2021/05/03/frontend/relearn/this-bi-bao-zuo-yong-yu/"/>
-    <id>http://axp97.github.io/2021/05/03/frontend/relearn/this-bi-bao-zuo-yong-yu/</id>
+    <link href="http://axp97.github.io/2021/05/03/front-end/relearn/this-bi-bao-zuo-yong-yu/"/>
+    <id>http://axp97.github.io/2021/05/03/front-end/relearn/this-bi-bao-zuo-yong-yu/</id>
     <published>2021-05-03T12:00:00.000Z</published>
-    <updated>2021-05-05T13:41:39.089Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -230,16 +259,16 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>ESNext规范</title>
-    <link href="http://axp97.github.io/2021/04/25/frontend/relearn/esnext-gui-fan-xiang-jie/"/>
-    <id>http://axp97.github.io/2021/04/25/frontend/relearn/esnext-gui-fan-xiang-jie/</id>
+    <link href="http://axp97.github.io/2021/04/25/front-end/relearn/esnext-gui-fan-xiang-jie/"/>
+    <id>http://axp97.github.io/2021/04/25/front-end/relearn/esnext-gui-fan-xiang-jie/</id>
     <published>2021-04-25T01:00:00.000Z</published>
     <updated>2021-07-05T03:00:14.568Z</updated>
     
@@ -263,22 +292,22 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
-    
       <category term="ECMAScript" scheme="http://axp97.github.io/tags/ECMAScript/"/>
     
       <category term="ES6" scheme="http://axp97.github.io/tags/ES6/"/>
     
       <category term="ESNext" scheme="http://axp97.github.io/tags/ESNext/"/>
     
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
   </entry>
   
   <entry>
-    <title>面向对象编程</title>
-    <link href="http://axp97.github.io/2021/04/19/frontend/relearn/mian-xiang-dui-xiang-bian-cheng-yuan-xing-ji-yuan-xing-lian/"/>
-    <id>http://axp97.github.io/2021/04/19/frontend/relearn/mian-xiang-dui-xiang-bian-cheng-yuan-xing-ji-yuan-xing-lian/</id>
+    <title>面向对象＆原型链</title>
+    <link href="http://axp97.github.io/2021/04/19/front-end/relearn/mian-xiang-dui-xiang-bian-cheng-yuan-xing-ji-yuan-xing-lian/"/>
+    <id>http://axp97.github.io/2021/04/19/front-end/relearn/mian-xiang-dui-xiang-bian-cheng-yuan-xing-ji-yuan-xing-lian/</id>
     <published>2021-04-19T12:00:00.000Z</published>
-    <updated>2021-05-05T08:06:58.924Z</updated>
+    <updated>2021-07-25T10:25:03.546Z</updated>
     
     <summary type="html">
     
@@ -299,18 +328,18 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>初探TypeScript</title>
-    <link href="http://axp97.github.io/2021/04/12/frontend/relearn/chu-tan-typescript/"/>
-    <id>http://axp97.github.io/2021/04/12/frontend/relearn/chu-tan-typescript/</id>
+    <link href="http://axp97.github.io/2021/04/12/front-end/relearn/chu-tan-typescript/"/>
+    <id>http://axp97.github.io/2021/04/12/front-end/relearn/chu-tan-typescript/</id>
     <published>2021-04-12T12:00:00.000Z</published>
-    <updated>2021-05-19T03:14:36.601Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -333,18 +362,18 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>浏览器详解</title>
-    <link href="http://axp97.github.io/2021/04/11/frontend/relearn/liu-lan-qi-xiang-jie/"/>
-    <id>http://axp97.github.io/2021/04/11/frontend/relearn/liu-lan-qi-xiang-jie/</id>
+    <link href="http://axp97.github.io/2021/04/11/front-end/relearn/liu-lan-qi-xiang-jie/"/>
+    <id>http://axp97.github.io/2021/04/11/front-end/relearn/liu-lan-qi-xiang-jie/</id>
     <published>2021-04-11T01:30:00.000Z</published>
-    <updated>2021-05-05T08:07:51.148Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -363,18 +392,18 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
   <entry>
-    <title>JS模块化详解</title>
-    <link href="http://axp97.github.io/2021/04/05/frontend/relearn/js-mo-kuai-hua-xiang-jie/"/>
-    <id>http://axp97.github.io/2021/04/05/frontend/relearn/js-mo-kuai-hua-xiang-jie/</id>
+    <title>前端模块化</title>
+    <link href="http://axp97.github.io/2021/04/05/front-end/relearn/js-mo-kuai-hua-xiang-jie/"/>
+    <id>http://axp97.github.io/2021/04/05/front-end/relearn/js-mo-kuai-hua-xiang-jie/</id>
     <published>2021-04-05T14:20:00.000Z</published>
-    <updated>2021-05-05T14:26:12.261Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -383,8 +412,7 @@
         
         
           &lt;p&gt;首先我们明确一下：编程的本质是管理变量呀。为了更好的管理代码、组织及通信的模式而出现了模块化的技术方案。&lt;/p&gt;
-&lt;p&gt;本质上模块就是一种提供对外通信接口，进行代码切分/组合的管理方式。其呈现的方式因不同的模块化方案而不同，基本是以文件粒度区分。&lt;/p&gt;
-&lt;h2
+&lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot;
         
       
     
@@ -394,18 +422,20 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="前端工程化" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+      <category term="前端模块化" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Promise规范及应用</title>
-    <link href="http://axp97.github.io/2021/04/04/frontend/relearn/promise-gui-fan-ji-ying-yong/"/>
-    <id>http://axp97.github.io/2021/04/04/frontend/relearn/promise-gui-fan-ji-ying-yong/</id>
+    <link href="http://axp97.github.io/2021/04/04/front-end/relearn/promise-gui-fan-ji-ying-yong/"/>
+    <id>http://axp97.github.io/2021/04/04/front-end/relearn/promise-gui-fan-ji-ying-yong/</id>
     <published>2021-04-04T07:15:00.000Z</published>
-    <updated>2021-07-15T00:31:33.190Z</updated>
+    <updated>2021-07-24T01:42:03.768Z</updated>
     
     <summary type="html">
     
@@ -425,16 +455,16 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
-    
       <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Javascript" scheme="http://axp97.github.io/tags/Javascript/"/>
     
   </entry>
   
   <entry>
     <title>Vue详细上手指北</title>
-    <link href="http://axp97.github.io/2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/"/>
-    <id>http://axp97.github.io/2020/06/20/frontend/vue/vue-xiang-xi-shang-shou-zhi-bei/</id>
+    <link href="http://axp97.github.io/2020/06/20/front-end/vue/vue-xiang-xi-shang-shou-zhi-bei/"/>
+    <id>http://axp97.github.io/2020/06/20/front-end/vue/vue-xiang-xi-shang-shou-zhi-bei/</id>
     <published>2020-06-20T00:30:00.000Z</published>
     <updated>2021-07-15T07:28:08.978Z</updated>
     
@@ -461,8 +491,8 @@
   
   <entry>
     <title>Flutter手摸手趟坑</title>
-    <link href="http://axp97.github.io/2020/06/14/frontend/flutter/flutter-shou-mo-shou-tang-keng/"/>
-    <id>http://axp97.github.io/2020/06/14/frontend/flutter/flutter-shou-mo-shou-tang-keng/</id>
+    <link href="http://axp97.github.io/2020/06/14/front-end/flutter/flutter-shou-mo-shou-tang-keng/"/>
+    <id>http://axp97.github.io/2020/06/14/front-end/flutter/flutter-shou-mo-shou-tang-keng/</id>
     <published>2020-06-14T04:30:00.000Z</published>
     <updated>2021-04-20T13:42:11.894Z</updated>
     
@@ -489,8 +519,8 @@
   
   <entry>
     <title>Webpack浅学习</title>
-    <link href="http://axp97.github.io/2020/06/07/frontend/tool/webpack-qian-xue-xi/"/>
-    <id>http://axp97.github.io/2020/06/07/frontend/tool/webpack-qian-xue-xi/</id>
+    <link href="http://axp97.github.io/2020/06/07/front-end/tool/webpack-qian-xue-xi/"/>
+    <id>http://axp97.github.io/2020/06/07/front-end/tool/webpack-qian-xue-xi/</id>
     <published>2020-06-07T09:30:00.000Z</published>
     <updated>2021-04-20T13:42:11.895Z</updated>
     
@@ -511,9 +541,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
       <category term="Webpack" scheme="http://axp97.github.io/tags/Webpack/"/>
+    
+      <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
   </entry>
   
@@ -569,9 +599,9 @@
       <category term="读书笔记" scheme="http://axp97.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="实用型书" scheme="http://axp97.github.io/tags/%E5%AE%9E%E7%94%A8%E5%9E%8B%E4%B9%A6/"/>
-    
       <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    
+      <category term="实用型书" scheme="http://axp97.github.io/tags/%E5%AE%9E%E7%94%A8%E5%9E%8B%E4%B9%A6/"/>
     
   </entry>
   
@@ -602,33 +632,6 @@
       <category term="兼职" scheme="http://axp97.github.io/tags/%E5%85%BC%E8%81%8C/"/>
     
       <category term="淘客" scheme="http://axp97.github.io/tags/%E6%B7%98%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js之组件间通信</title>
-    <link href="http://axp97.github.io/2019/09/29/frontend/vue/vue-zhi-zu-jian-tong-xun/"/>
-    <id>http://axp97.github.io/2019/09/29/frontend/vue/vue-zhi-zu-jian-tong-xun/</id>
-    <published>2019-09-29T10:00:00.000Z</published>
-    <updated>2021-04-20T13:42:11.895Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;code&gt;Vue&lt;/code&gt; 组件间的通信是 &lt;code&gt;Vue&lt;/code&gt; 开发中很基础也十分重要的部分，写一个 Vue 工程，实际是在写一个个的组件。下面根据场景介绍组件间常用的几种通信方式~ 文章只贴出重点代码，详细代码戳demo链接~
-        
-      
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="Vue" scheme="http://axp97.github.io/tags/Vue/"/>
     
   </entry>
   
