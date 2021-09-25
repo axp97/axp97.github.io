@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="面向对象＆原型链, 安小盼, AXP">
+    <meta name="keywords" content="初探Node.js, 安小盼, AXP">
     <meta name="description" content="目标
-清楚面向对象编程思想
-深入原型及原型链： 对象间关系
-手写实现 new 函数
-深入继承：多种继承的实现
+ Node.js 基础
+ CommonJS 模块化规范及原理✨
+ 实现简易版 CommonJS
 
-知识要点一、 面向对象编程实际是一种思想。当问题复杂或参与方较多建议使用，能简化问题，方便后期扩展和维护。
-二、 原型及原型链原">
+知识要点一、 Node.js简介node.js 是⼀个 JS 的服务端运⾏环境，JS 只能进⾏⼀些简单的逻辑运算，node.js 基于 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>面向对象＆原型链 | 安小盼的博客</title>
+    <title>初探Node.js | 安小盼的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -250,13 +248,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        面向对象＆原型链
+                        初探Node.js
                     </div>
                 </div>
             </div>
@@ -367,12 +365,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Javascript/" target="_blank">
-                                <span class="chip bg-color">Javascript</span>
-                            </a>
-                        
                             <a href="/tags/前端进阶/" target="_blank">
                                 <span class="chip bg-color">前端进阶</span>
+                            </a>
+                        
+                            <a href="/tags/Node-js/" target="_blank">
+                                <span class="chip bg-color">Node.js</span>
                             </a>
                         
                     </div>
@@ -395,21 +393,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-19
+                    2021-08-01
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        836
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -426,130 +424,115 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>清楚面向对象编程思想</li>
-<li>深入原型及原型链： 对象间关系</li>
-<li>手写实现 <code>new</code> 函数</li>
-<li>深入继承：多种继承的实现</li>
+<li><input checked disabled type="checkbox"> <code>Node.js</code> 基础</li>
+<li><input checked disabled type="checkbox"> <code>CommonJS</code> 模块化规范及原理✨</li>
+<li><input checked disabled type="checkbox"> 实现简易版 <code>CommonJS</code></li>
 </ul>
-<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-面向对象编程"><a href="#一、-面向对象编程" class="headerlink" title="一、 面向对象编程"></a>一、 面向对象编程</h3><p>实际是一种思想。当问题复杂或参与方较多建议使用，能简化问题，方便后期扩展和维护。</p>
-<h3 id="二、-原型及原型链"><a href="#二、-原型及原型链" class="headerlink" title="二、 原型及原型链"></a>二、 原型及原型链</h3><p>原型链实际是对象间的关系：由 <code>__proto__</code> 和 <code>prototype</code> 连接的链条。</p>
-<h4 id="1-手写实现-new-函数"><a href="#1-手写实现-new-函数" class="headerlink" title="1. 手写实现 new 函数"></a>1. 手写实现 new 函数</h4><p>在内存中开辟一段空间，添加原型，将 <code>this</code> 挂在这个对象上</p>
-<p><strong>具体</strong></p>
-<ol>
-<li>用 <code>new Object()</code> 的方式新建了一个对象 obj</li>
-<li>取第一个参数，即传入的构造函数。此外因 <code>shift</code> 会修改原数组，所以 <code>arguments</code> 会被去除第一个参数</li>
-<li>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性</li>
-<li>使用 <code>apply</code>，改变构造函数 <code>this</code> 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性</li>
-<li>返回 obj</li>
-</ol>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">objectFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> Constructor <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shift<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> Constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ret <span class="token operator">=</span> Constructor<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token keyword">typeof</span> ret <span class="token operator">===</span> <span class="token string">"object"</span> <span class="token operator">?</span> ret <span class="token punctuation">:</span> obj<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="三、-继承"><a href="#三、-继承" class="headerlink" title="三、 继承"></a>三、 继承</h3><p>父类拥有的方法和属性、静态方法等，子类也要拥有。</p>
-<h4 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1. 原型链继承"></a>1. 原型链继承</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">// Person 的实例同时包含实例属性方法和原型属性方法</span>
-Student<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// 保证 student.constructor 类型正确</span>
-Student<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Student<span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> student <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><strong>缺点</strong></p>
-<p>1.引用类型的属性被所有实例共享<br>2.在创建 ChildCon 的实例时，不能向 ParentCon 传参</p>
-<h4 id="2-构造函数继承（经典继承）"><a href="#2-构造函数继承（经典继承）" class="headerlink" title="2. 构造函数继承（经典继承）"></a>2. 构造函数继承（经典继承）</h4><p>将父类的实例作为子类的原型</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name；
-<span class="token punctuation">}</span>
-<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 多参： Person.apply(this, Array.from(arguments).slice(1));</span>
-    Person<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-<p><strong>缺点</strong></p>
-<ol>
-<li>方法都在构造函数中定义，每次创建实例都会创建一遍方法。</li>
-<li>函数是引用类型，父类的函数在子类的实例下不共享</li>
-</ol>
-<h4 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h4><p>原型式继承和构造函数继承的组合，兼具了二者的优点。<br>普通属性使用构造函数继承，函数使用原型链继承</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>hobbies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music'</span><span class="token punctuation">,</span><span class="token string">'reading'</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-Person<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>say <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'I am a person'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    Person<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-Student<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Student<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Student<span class="token punctuation">;</span></code></pre>
-<p><strong>缺点</strong></p>
-<p>调用了两次父类的构造函数，造成了性能上的浪费</p>
-<h4 id="4-原型式继承"><a href="#4-原型式继承" class="headerlink" title="4. 原型式继承"></a>4. 原型式继承</h4><p>实质：对参数对象的一个浅复制<br>ES5 Object.create 的模拟实现，传入的对象作为创建的对象的原型。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createObj</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">function</span> <span class="token function">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-    F<span class="token punctuation">.</span>prototype <span class="token operator">=</span> o<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><strong>缺点：同 原型链继承</strong></p>
-<ol>
-<li>父类的引用属性会被所有子类实例共享</li>
-<li>子类构建实例时不能向父类传递参数</li>
-</ol>
-<h4 id="5-寄生式继承"><a href="#5-寄生式继承" class="headerlink" title="5. 寄生式继承"></a>5. 寄生式继承</h4><p>使用原型式继承获得一个目标对象的浅复制，然后增强这个浅复制的能力。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> createObj <span class="token punctuation">(</span>o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> clone <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    clone<span class="token punctuation">.</span>sayName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> clone<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><strong>缺点：同 借用构造函数</strong></p>
-<ol>
-<li>每次创建对象都会创建一遍方法</li>
-</ol>
-<h4 id="6-寄生组合式继承（基于组合继承）"><a href="#6-寄生组合式继承（基于组合继承）" class="headerlink" title="6. 寄生组合式继承（基于组合继承）"></a>6. 寄生组合式继承（基于组合继承）</h4><p>只调用了一次 Parent 构造函数，并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> Parent <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-Parent<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getName <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">function</span> Child <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    Parent<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">// 关键的三步</span>
-<span class="token keyword">var</span> F <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-F<span class="token punctuation">.</span>prototype <span class="token operator">=</span> Parent<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
-Child<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">var</span> child1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">'kevin'</span><span class="token punctuation">,</span> <span class="token string">'18'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>child1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><strong>优点</strong></p>
-<p>因为是对父类原型的复制，所以不包含父类的构造函数，也就不会调用两次父类的构造函数造成浪费</p>
-<h4 id="7-ES6-Class-extends"><a href="#7-ES6-Class-extends" class="headerlink" title="7. ES6 Class extends"></a>7. ES6 Class extends</h4><p>寄生组合继承的语法糖，是ES5继承的语法糖<br>本质上，ES6 的类只是 ES5 的构造函数的一层包装</p>
-<h2 id="补充知识点"><a href="#补充知识点" class="headerlink" title="补充知识点"></a>补充知识点</h2><h3 id="1-类数组转为数组"><a href="#1-类数组转为数组" class="headerlink" title="1. 类数组转为数组"></a>1. 类数组转为数组</h3><ul>
-<li>[…arguments].slice()</li>
-<li>Array.prototype.slice.call(arguments)</li>
-<li>Array.from</li>
-<li>[].slice.call(arguments)</li>
+<h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-Node-js简介"><a href="#一、-Node-js简介" class="headerlink" title="一、 Node.js简介"></a>一、 Node.js简介</h3><p><code>node.js</code> 是⼀个 <code>JS</code> 的<strong>服务端运⾏环境</strong>，<code>JS</code> 只能进⾏⼀些简单的逻辑运算，<code>node.js</code> 基于 <code>JS</code> 语法增加<strong>与操作系统之间的交互</strong>。👍</p>
+<h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h4><ul>
+<li>通过官⽹的<strong>⼆进制安装⽂件</strong>来安装<ul>
+<li>适用：个人开发电脑</li>
+<li>node.js 本质上也是软件</li>
 </ul>
-<h3 id="2-原型链神图"><a href="#2-原型链神图" class="headerlink" title="2. 原型链神图"></a>2. 原型链神图</h3><p><img src="/static/xmind/front_end/relearn/oop-chain.png" alt></p>
-<h4 id="2-1-玩一玩-Function-proto-Function-prototype"><a href="#2-1-玩一玩-Function-proto-Function-prototype" class="headerlink" title="2.1. 玩一玩~ Function.proto === Function.prototype"></a>2.1. 玩一玩~ Function.<strong>proto</strong> === Function.prototype</h4><p><strong>1. Why yes？</strong></p>
-<p>按照 JavaScript 中“实例”的定义，a 是 b 的实例即 a instanceof b 为 true，默认判断条件就是 b.prototype 在 a 的原型链上。</p>
-<p>而 Function instanceof Function 为 true，本质上即 Object.getPrototypeOf(Function) === Function.prototype，正符合此定义。</p>
-<p><strong>2. Why no？</strong></p>
-<p>Function 是 built-in 的对象，也就是并不存在“Function对象由Function构造函数创建”这样显然会造成鸡生蛋蛋生鸡的问题。实际上，当你直接写一个函数时（如 function f() {} 或 x =&gt; x），也不存在调用 Function 构造器，只有在显式调用 Function 构造器时（如 new Function(‘x’, ‘return x’) ）才有。</p>
-<p>把  Function.<strong>proto</strong> 指向 Function.prototype 是为了保证原型链的完整，让 Function 可以获取定义在 Object.prototype 上的方法。</p>
-<p><img src="/static/xmind/front_end/relearn/oop.png" alt="xmind总结"></p>
+</li>
+<li>通过<strong>二进制编译方式</strong>来安装<ul>
+<li>适用：打包上线的一些nodejs环境<br>，比如 docker、linux 不适合通过安装文件安装</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-版本切换工具"><a href="#2-版本切换工具" class="headerlink" title="2. 版本切换工具"></a>2. 版本切换工具</h4><p>❔为什么使用呢？</p>
+<ul>
+<li>不同项目用不同的 node 版本</li>
+<li>插件对 node.js 版本的兼容问题</li>
+</ul>
+<h5 id="2-1-nvm工具👍"><a href="#2-1-nvm工具👍" class="headerlink" title="2.1. nvm工具👍"></a>2.1. nvm工具👍</h5><p><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">nvm下载的传送门</a></p>
+<p><strong>原理：</strong> 通过 nvm 切换环境变量里 node 命令指向的软件路径</p>
+<h5 id="2-2-n工具"><a href="#2-2-n工具" class="headerlink" title="2.2. n工具"></a>2.2. n工具</h5><p>n 依赖于 node，n 命令是 node 的一个模块，安装方式如下：</p>
+<pre class=" language-cmd"><code class="language-cmd">npm install -g n</code></pre>
+<p><strong>❗注意：</strong> n 对全局模块毫无作为，因此有可能在切换了 node 版本后发生全局模块执行出错的问题。</p>
+<h4 id="3-包管理工具"><a href="#3-包管理工具" class="headerlink" title="3. 包管理工具"></a>3. 包管理工具</h4><p>npm 熟悉的老大哥啦，是 node.js 内置的 ⼀款⼯具。</p>
+<h4 id="4-周边工具解析"><a href="#4-周边工具解析" class="headerlink" title="4. 周边工具解析"></a>4. 周边工具解析</h4><p>略</p>
+<h3 id="二、-CommonJS模块"><a href="#二、-CommonJS模块" class="headerlink" title="二、 CommonJS模块"></a>二、 CommonJS模块</h3><h4 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h4><h4 id="1-1-require-和-exports："><a href="#1-1-require-和-exports：" class="headerlink" title="1.1. require 和 exports："></a>1.1. require 和 exports：</h4><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块：</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 导出模块：</span>
+module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span> 
+exports<span class="token punctuation">.</span>key<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<ul>
+<li>缓存<ul>
+<li><code>require</code> 值会缓存，通过 <code>require</code> 引用文件时，会将文件执行一遍后，将结果通过浅克隆的方式，写入全局内存，后续 <code>require</code> 该路径，直接从内存获取，无需重新执行文件</li>
+</ul>
+</li>
+<li>值拷贝<ul>
+<li>模块输出是值的拷贝，一旦输出，模块内部变化后，无法影响之前的引用，而<code>ESModule</code> 是引用拷贝。<code>commonJS</code> 运行时加载，<code>ESModule</code> 编译阶段引用</li>
+</ul>
+</li>
+<li><code>commonJS</code> 和 <code>ESModule</code><ul>
+<li><code>CommonJS</code> 在引入时是加载整个模块，生成一个对象，然后再从这个生成的对象上读取方法和属性</li>
+<li><code>ESModule</code> 不是对象，而是通过export暴露出要输出的代码块，在 <code>import</code> 时使用静态命令的方法引用制定的输出代码块，并在 <code>import</code> 语句处执行这个要输出的代码，而不是直接加载整个模块</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-经典面试：export"><a href="#1-2-经典面试：export" class="headerlink" title="1.2. 经典面试：export"></a>1.2. 经典面试：export</h4><p>为何直接使用 <code>exports</code> 导出 <code>commonjs</code> 模块，eg：<code>exports = “hello”</code>?</p>
+<p><strong>解析：</strong> </p>
+<ul>
+<li><code>commonjs</code> 模块是通过 <code>module.exports</code> 导出模块，<code>exports</code> 为 <code>module.exports</code> 的引用</li>
+<li>使用<code>exports</code> 直接赋值导出模块，只会改变 <code>exports</code> 的引用不会导出 <code>commonjs</code> 模块。</li>
+<li>引用断掉了，没法导出新的变量/模块</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// cjs正确导出用法</span>
+exports<span class="token punctuation">.</span>key <span class="token operator">=</span> <span class="token string">'hello world'</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token string">"hello world"</span>
+
+<span class="token comment" spellcheck="true">// 错误导出</span>
+exports <span class="token operator">=</span> <span class="token string">"hello world"</span> <span class="token comment" spellcheck="true">//无法输出</span>
+
+<span class="token comment" spellcheck="true">// 解析：</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  key<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 方式一：obj 引用</span>
+obj<span class="token punctuation">.</span>key <span class="token operator">=</span> <span class="token string">"hello world"</span>
+
+<span class="token comment" spellcheck="true">// 方式二：赋值给变量，对象变量相同引用</span>
+<span class="token keyword">const</span> key <span class="token operator">=</span> obj<span class="token punctuation">.</span>key
+key<span class="token punctuation">.</span>key1 <span class="token operator">=</span> <span class="token string">"hello world"</span>
+
+<span class="token comment" spellcheck="true">/* 
+无效：通过引用改变，改变了key的引用
+引用断掉；无法改变obj
+*/</span>
+key <span class="token operator">=</span> <span class="token string">"hello world"</span></code></pre>
+<h4 id="2-简单实现"><a href="#2-简单实现" class="headerlink" title="2. 简单实现"></a>2. 简单实现</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vm'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> customRequire <span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> pathToFile <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>pathToFile<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'(function(require, module, exports, __dirname, __filename, zhuawa) {'</span><span class="token punctuation">,</span>
+    <span class="token string">'})'</span>
+  <span class="token punctuation">]</span>
+  <span class="token keyword">const</span> wrappedContent <span class="token operator">=</span> wrapper<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> content  <span class="token operator">+</span> wrapper<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+  <span class="token keyword">const</span> script <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">vm<span class="token punctuation">.</span>Script</span><span class="token punctuation">(</span>wrappedContent<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'index.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> module <span class="token operator">=</span> <span class="token punctuation">{</span>
+    exports<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> result <span class="token operator">=</span> script<span class="token punctuation">.</span><span class="token function">runInThisContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// 函数执行，引入模块，若内部有 require 继续递归</span>
+  <span class="token function">result</span><span class="token punctuation">(</span>customRequire<span class="token punctuation">,</span> module<span class="token punctuation">,</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> module<span class="token punctuation">.</span>exports
+<span class="token punctuation">}</span>
+global<span class="token punctuation">.</span>r <span class="token operator">=</span> customRequire</code></pre>
+<h4 id="3-原理解析"><a href="#3-原理解析" class="headerlink" title="3.原理解析"></a>3.原理解析</h4><p>待填坑~</p>
 
             </div>
             <hr/>
@@ -697,7 +680,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </span>
                     <a href="http://axp97.github.io" class="b-link-green">安小盼的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/04/19/front-end/relearn/mian-xiang-dui-xiang-bian-cheng-yuan-xing-ji-yuan-xing-lian/" class="b-link-green">面向对象＆原型链</a>
+                    <a href="/2021/08/01/front-end/relearn/chu-tan-node.js/" class="b-link-green">初探Node.js</a>
                 </p>
             </div>
         </div>
@@ -722,37 +705,34 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/25/front-end/relearn/esnext-gui-fan-xiang-jie/">
+                <a href="/2021/09/12/book/other/ren-sheng-de-zhi-hui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ESNext规范">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="读《人生的智慧》">
                         
-                        <span class="card-title">ESNext规范</span>
+                        <span class="card-title">读《人生的智慧》</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目标
-了解 ECMAScript 规范发展
-熟悉 ES6 及以后新增的常用 API
-
-知识要点一、 ECMAScript 规范发展可以版本号描述，比如ES6、ES7。也可以年份来描述，比如ES2015、ES2016。
-
-ES6：指 2015
+                            这本书整体谈了什么？&emsp;&emsp;第一本哲学书：本书告诉读者如何尽可能地过的幸福快乐，人们追求物质和渴望，但是内心得来的快乐才是基石。也就是你才是你自己的快乐源泉~
+豆瓣传送门
+细部说了什么？
+快乐的源泉在于自身，奠定了个人道德品
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-25
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/书影音/" class="post-category" target="_blank">
+                                    书影音
                                 </a>
                             
                             
@@ -762,20 +742,12 @@ ES6：指 2015
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/前端进阶/" target="_blank">
-                        <span class="chip bg-color">前端进阶</span>
+                    <a href="/tags/读书笔记/" target="_blank">
+                        <span class="chip bg-color">读书笔记</span>
                     </a>
                     
-                    <a href="/tags/ECMAScript/" target="_blank">
-                        <span class="chip bg-color">ECMAScript</span>
-                    </a>
-                    
-                    <a href="/tags/ES6/" target="_blank">
-                        <span class="chip bg-color">ES6</span>
-                    </a>
-                    
-                    <a href="/tags/ESNext/" target="_blank">
-                        <span class="chip bg-color">ESNext</span>
+                    <a href="/tags/哲学/" target="_blank">
+                        <span class="chip bg-color">哲学</span>
                     </a>
                     
                 </div>
@@ -789,37 +761,40 @@ ES6：指 2015
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/12/front-end/relearn/chu-tan-typescript/">
+                <a href="/2021/07/24/book/front-end/du-ni-bu-zhi-dao-de-javascript-shang-juan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="初探TypeScript">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="读《你不知道的JavaScript》">
                         
-                        <span class="card-title">初探TypeScript</span>
+                        <span class="card-title">读《你不知道的JavaScript》</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目标
-熟悉 ts 
-面试题及实战
-了解 ts 基本原理
+                            这本书整体谈了什么？深入 JavaScript 语言去弄清楚我们平常写的代码发生了什么。每部分附读书笔记思维导图。豆瓣传送门
+部分解读一、作用域和闭包
+这本书写的有道理吗？待填坑…
 
-知识要点0. 准备npm install -g typescript
-tsc hello.tsTypeScript 基础方面总结请跳到文底看 xmind 文件呢，或者阅览官方文档。贴
+
+它与我关系是什么？待填坑…
+
+
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-07-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/书影音/" class="post-category" target="_blank">
+                                    书影音
                                 </a>
                             
                             
@@ -829,12 +804,12 @@ tsc hello.tsTypeScript 基础方面总结请跳到文底看 xmind 文件呢，�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/" target="_blank">
-                        <span class="chip bg-color">Javascript</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/前端进阶/" target="_blank">
-                        <span class="chip bg-color">前端进阶</span>
+                    <a href="/tags/思维导图/" target="_blank">
+                        <span class="chip bg-color">思维导图</span>
                     </a>
                     
                 </div>
