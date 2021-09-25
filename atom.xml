@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://axp97.github.io/"/>
-  <updated>2021-09-25T15:50:29.026Z</updated>
+  <updated>2021-09-20T13:20:32.629Z</updated>
   <id>http://axp97.github.io/</id>
   
   <author>
@@ -15,21 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://axp97.github.io/2021/09/25/front-end/relearn/chu-tan-node.js/"/>
-    <id>http://axp97.github.io/2021/09/25/front-end/relearn/chu-tan-node.js/</id>
-    <published>2021-09-25T15:41:44.844Z</published>
-    <updated>2021-09-25T15:50:29.026Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>观《人间世 第一季》</title>
@@ -86,6 +71,36 @@
       <category term="读书笔记" scheme="http://axp97.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
       <category term="哲学" scheme="http://axp97.github.io/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初探Node.js</title>
+    <link href="http://axp97.github.io/2021/08/01/front-end/relearn/chu-tan-node.js/"/>
+    <id>http://axp97.github.io/2021/08/01/front-end/relearn/chu-tan-node.js/</id>
+    <published>2021-08-01T14:00:00.000Z</published>
+    <updated>2021-09-25T15:52:44.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目标&quot;&gt;&lt;/a&gt;目标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked disabled type=&quot;checkbox&quot;&gt; &lt;code&gt;Node.js&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Node.js" scheme="http://axp97.github.io/tags/Node-js/"/>
     
   </entry>
   
@@ -365,13 +380,13 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
+    
       <category term="ECMAScript" scheme="http://axp97.github.io/tags/ECMAScript/"/>
     
       <category term="ES6" scheme="http://axp97.github.io/tags/ES6/"/>
     
       <category term="ESNext" scheme="http://axp97.github.io/tags/ESNext/"/>
-    
-      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
     
   </entry>
   
@@ -495,11 +510,11 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
-    
       <category term="前端工程化" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     
       <category term="前端模块化" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    
+      <category term="前端进阶" scheme="http://axp97.github.io/tags/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"/>
     
   </entry>
   

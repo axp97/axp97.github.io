@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="2021/09/25/front-end/relearn/chu-tan-node.js/"/>
-      <url>2021/09/25/front-end/relearn/chu-tan-node.js/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>观《人间世 第一季》</title>
       <link href="2021/09/20/book/video/ren-jian-shi/"/>
       <url>2021/09/20/book/video/ren-jian-shi/</url>
@@ -63,6 +50,33 @@
             <tag> 读书笔记 </tag>
             
             <tag> 哲学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初探Node.js</title>
+      <link href="2021/08/01/front-end/relearn/chu-tan-node.js/"/>
+      <url>2021/08/01/front-end/relearn/chu-tan-node.js/</url>
+      
+        <content type="html"><![CDATA[<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul><li><input checked disabled type="checkbox"> <code>Node.js</code> 基础</li><li><input checked disabled type="checkbox"> <code>CommonJS</code> 模块化规范及原理✨</li><li><input checked disabled type="checkbox"> 实现简易版 <code>CommonJS</code></li></ul><h2 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h2><h3 id="一、-Node-js简介"><a href="#一、-Node-js简介" class="headerlink" title="一、 Node.js简介"></a>一、 Node.js简介</h3><p><code>node.js</code> 是⼀个 <code>JS</code> 的<strong>服务端运⾏环境</strong>，<code>JS</code> 只能进⾏⼀些简单的逻辑运算，<code>node.js</code> 基于 <code>JS</code> 语法增加<strong>与操作系统之间的交互</strong>。👍</p><h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h4><ul><li>通过官⽹的<strong>⼆进制安装⽂件</strong>来安装<ul><li>适用：个人开发电脑</li><li>node.js 本质上也是软件</li></ul></li><li>通过<strong>二进制编译方式</strong>来安装<ul><li>适用：打包上线的一些nodejs环境<br>，比如 docker、linux 不适合通过安装文件安装</li></ul></li></ul><h4 id="2-版本切换工具"><a href="#2-版本切换工具" class="headerlink" title="2. 版本切换工具"></a>2. 版本切换工具</h4><p>❔为什么使用呢？</p><ul><li>不同项目用不同的 node 版本</li><li>插件对 node.js 版本的兼容问题</li></ul><h5 id="2-1-nvm工具👍"><a href="#2-1-nvm工具👍" class="headerlink" title="2.1. nvm工具👍"></a>2.1. nvm工具👍</h5><p><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">nvm下载的传送门</a></p><p><strong>原理：</strong> 通过 nvm 切换环境变量里 node 命令指向的软件路径</p><h5 id="2-2-n工具"><a href="#2-2-n工具" class="headerlink" title="2.2. n工具"></a>2.2. n工具</h5><p>n 依赖于 node，n 命令是 node 的一个模块，安装方式如下：</p><pre class=" language-cmd"><code class="language-cmd">npm install -g n</code></pre><p><strong>❗注意：</strong> n 对全局模块毫无作为，因此有可能在切换了 node 版本后发生全局模块执行出错的问题。</p><h4 id="3-包管理工具"><a href="#3-包管理工具" class="headerlink" title="3. 包管理工具"></a>3. 包管理工具</h4><p>npm 熟悉的老大哥啦，是 node.js 内置的 ⼀款⼯具。</p><h4 id="4-周边工具解析"><a href="#4-周边工具解析" class="headerlink" title="4. 周边工具解析"></a>4. 周边工具解析</h4><p>略</p><h3 id="二、-CommonJS模块"><a href="#二、-CommonJS模块" class="headerlink" title="二、 CommonJS模块"></a>二、 CommonJS模块</h3><h4 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h4><h4 id="1-1-require-和-exports："><a href="#1-1-require-和-exports：" class="headerlink" title="1.1. require 和 exports："></a>1.1. require 和 exports：</h4><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块：</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">// 导出模块：</span>module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span> exports<span class="token punctuation">.</span>key<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><ul><li>缓存<ul><li><code>require</code> 值会缓存，通过 <code>require</code> 引用文件时，会将文件执行一遍后，将结果通过浅克隆的方式，写入全局内存，后续 <code>require</code> 该路径，直接从内存获取，无需重新执行文件</li></ul></li><li>值拷贝<ul><li>模块输出是值的拷贝，一旦输出，模块内部变化后，无法影响之前的引用，而<code>ESModule</code> 是引用拷贝。<code>commonJS</code> 运行时加载，<code>ESModule</code> 编译阶段引用</li></ul></li><li><code>commonJS</code> 和 <code>ESModule</code><ul><li><code>CommonJS</code> 在引入时是加载整个模块，生成一个对象，然后再从这个生成的对象上读取方法和属性</li><li><code>ESModule</code> 不是对象，而是通过export暴露出要输出的代码块，在 <code>import</code> 时使用静态命令的方法引用制定的输出代码块，并在 <code>import</code> 语句处执行这个要输出的代码，而不是直接加载整个模块</li></ul></li></ul><h4 id="1-2-经典面试：export"><a href="#1-2-经典面试：export" class="headerlink" title="1.2. 经典面试：export"></a>1.2. 经典面试：export</h4><p>为何直接使用 <code>exports</code> 导出 <code>commonjs</code> 模块，eg：<code>exports = “hello”</code>?</p><p><strong>解析：</strong> </p><ul><li><code>commonjs</code> 模块是通过 <code>module.exports</code> 导出模块，<code>exports</code> 为 <code>module.exports</code> 的引用</li><li>使用<code>exports</code> 直接赋值导出模块，只会改变 <code>exports</code> 的引用不会导出 <code>commonjs</code> 模块。</li><li>引用断掉了，没法导出新的变量/模块</li></ul><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// cjs正确导出用法</span>exports<span class="token punctuation">.</span>key <span class="token operator">=</span> <span class="token string">'hello world'</span>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token comment" spellcheck="true">// 错误导出</span>exports <span class="token operator">=</span> <span class="token string">"hello world"</span> <span class="token comment" spellcheck="true">//无法输出</span><span class="token comment" spellcheck="true">// 解析：</span><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>  key<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">// 方式一：obj 引用</span>obj<span class="token punctuation">.</span>key <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token comment" spellcheck="true">// 方式二：赋值给变量，对象变量相同引用</span><span class="token keyword">const</span> key <span class="token operator">=</span> obj<span class="token punctuation">.</span>keykey<span class="token punctuation">.</span>key1 <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token comment" spellcheck="true">/* 无效：通过引用改变，改变了key的引用引用断掉；无法改变obj*/</span>key <span class="token operator">=</span> <span class="token string">"hello world"</span></code></pre><h4 id="2-简单实现"><a href="#2-简单实现" class="headerlink" title="2. 简单实现"></a>2. 简单实现</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vm'</span><span class="token punctuation">)</span><span class="token keyword">function</span> customRequire <span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token keyword">const</span> pathToFile <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>  <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>pathToFile<span class="token punctuation">)</span>  <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token punctuation">[</span>    <span class="token string">'(function(require, module, exports, __dirname, __filename, zhuawa) {'</span><span class="token punctuation">,</span>    <span class="token string">'})'</span>  <span class="token punctuation">]</span>  <span class="token keyword">const</span> wrappedContent <span class="token operator">=</span> wrapper<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> content  <span class="token operator">+</span> wrapper<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token keyword">const</span> script <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">vm<span class="token punctuation">.</span>Script</span><span class="token punctuation">(</span>wrappedContent<span class="token punctuation">,</span> <span class="token punctuation">{</span>    filename<span class="token punctuation">:</span> <span class="token string">'index.js'</span>  <span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token keyword">const</span> module <span class="token operator">=</span> <span class="token punctuation">{</span>    exports<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token punctuation">}</span>  <span class="token keyword">const</span> result <span class="token operator">=</span> script<span class="token punctuation">.</span><span class="token function">runInThisContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 函数执行，引入模块，若内部有 require 继续递归</span>  <span class="token function">result</span><span class="token punctuation">(</span>customRequire<span class="token punctuation">,</span> module<span class="token punctuation">,</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span>  <span class="token keyword">return</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">}</span>global<span class="token punctuation">.</span>r <span class="token operator">=</span> customRequire</code></pre><h4 id="3-原理解析"><a href="#3-原理解析" class="headerlink" title="3.原理解析"></a>3.原理解析</h4><p>待填坑~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端进阶 </tag>
+            
+            <tag> Node.js </tag>
             
         </tags>
       
@@ -317,13 +331,13 @@
       
         <tags>
             
+            <tag> 前端进阶 </tag>
+            
             <tag> ECMAScript </tag>
             
             <tag> ES6 </tag>
             
             <tag> ESNext </tag>
-            
-            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -429,11 +443,11 @@
       
         <tags>
             
-            <tag> 前端进阶 </tag>
-            
             <tag> 前端工程化 </tag>
             
             <tag> 前端模块化 </tag>
+            
+            <tag> 前端进阶 </tag>
             
         </tags>
       
@@ -562,9 +576,9 @@
       
         <tags>
             
-            <tag> 读书笔记 </tag>
-            
             <tag> 思维导图 </tag>
+            
+            <tag> 读书笔记 </tag>
             
             <tag> 社会科学 </tag>
             
