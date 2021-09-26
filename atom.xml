@@ -127,9 +127,9 @@
       <category term="书影音" scheme="http://axp97.github.io/categories/%E4%B9%A6%E5%BD%B1%E9%9F%B3/"/>
     
     
-      <category term="JavaScript" scheme="http://axp97.github.io/tags/JavaScript/"/>
-    
       <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    
+      <category term="JavaScript" scheme="http://axp97.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -629,9 +629,9 @@
       <category term="前端" scheme="http://axp97.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
-    
       <category term="Webpack" scheme="http://axp97.github.io/tags/Webpack/"/>
+    
+      <category term="思维导图" scheme="http://axp97.github.io/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
     
   </entry>
   
