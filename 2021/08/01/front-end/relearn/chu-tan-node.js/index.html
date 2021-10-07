@@ -400,14 +400,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        836
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        6 分
                     </div>
                     
                 
@@ -436,7 +436,7 @@
 </ul>
 </li>
 <li>通过<strong>二进制编译方式</strong>来安装<ul>
-<li>适用：打包上线的一些nodejs环境<br>，比如 docker、linux 不适合通过安装文件安装</li>
+<li>适用：打包上线的一些nodejs环境，比如 docker、linux 不适合通过安装文件安装</li>
 </ul>
 </li>
 </ul>
@@ -452,7 +452,25 @@
 <p><strong>❗注意：</strong> n 对全局模块毫无作为，因此有可能在切换了 node 版本后发生全局模块执行出错的问题。</p>
 <h4 id="3-包管理工具"><a href="#3-包管理工具" class="headerlink" title="3. 包管理工具"></a>3. 包管理工具</h4><p>npm 熟悉的老大哥啦，是 node.js 内置的 ⼀款⼯具。</p>
 <h4 id="4-周边工具解析"><a href="#4-周边工具解析" class="headerlink" title="4. 周边工具解析"></a>4. 周边工具解析</h4><p>略</p>
-<h3 id="二、-CommonJS模块"><a href="#二、-CommonJS模块" class="headerlink" title="二、 CommonJS模块"></a>二、 CommonJS模块</h3><h4 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h4><h4 id="1-1-require-和-exports："><a href="#1-1-require-和-exports：" class="headerlink" title="1.1. require 和 exports："></a>1.1. require 和 exports：</h4><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块：</span>
+<h3 id="二、-CommonJS模块"><a href="#二、-CommonJS模块" class="headerlink" title="二、 CommonJS模块"></a>二、 CommonJS模块</h3><h4 id="1-底层依赖"><a href="#1-底层依赖" class="headerlink" title="1. 底层依赖"></a>1. 底层依赖</h4><ul>
+<li>V8 引擎：主要是 JS 语法的解析，有了它才能识别 JS语法</li>
+<li>libuv：C 语⾔实现的⼀个⾼性能异步⾮阻塞 IO 库，⽤来实现 node.js 的事件循环</li>
+<li>http-parser/llhttp：底层处理 http 请求，处理报⽂，解析请求包等内容</li>
+<li>openssl：处理加密算法，各种框架运⽤⼴泛，底层依赖，无需js实现</li>
+<li>zlib：处理压缩等内容</li>
+</ul>
+<h4 id="2-常⻅内置模块"><a href="#2-常⻅内置模块" class="headerlink" title="2. 常⻅内置模块"></a>2. 常⻅内置模块</h4><p>node.js 中最主要的内容，就是实现了⼀套 CommonJS的模块化规范，以及内置了⼀些常⻅的模块。</p>
+<ul>
+<li>fs：⽂件系统，能够读取写⼊当前安装系统环境中硬盘的数据</li>
+<li>path：路径系统，能够处理路径之间的问题</li>
+<li>crypto：加密相关模块，能够以标准的加密⽅式对我们的内容进⾏加解密</li>
+<li>dns：处理 dns 相关内容，例如我们可以设置 dns 服务器等等</li>
+<li>http: 设置⼀个 http 服务器，发送 http 请求，监听响应等等</li>
+<li>readline: 读取 stdin 的⼀⾏内容，可以读取、增加、删除我们命令⾏中的内容</li>
+<li>os：操作系统层⾯的⼀些 api，例如告诉你当前系统类型及⼀些参数</li>
+<li>vm: ⼀个专⻔处理沙箱的虚拟机模块，底层主要来调⽤ v8 相关 api 进⾏代码解析</li>
+</ul>
+<h4 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h4><h3 id="三、-CommonJS模块"><a href="#三、-CommonJS模块" class="headerlink" title="三、 CommonJS模块"></a>三、 CommonJS模块</h3><h4 id="1-基础-1"><a href="#1-基础-1" class="headerlink" title="1. 基础"></a>1. 基础</h4><h4 id="1-1-require-和-exports"><a href="#1-1-require-和-exports" class="headerlink" title="1.1. require 和 exports"></a>1.1. require 和 exports</h4><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 引入模块：</span>
 <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">// 导出模块：</span>
 module<span class="token punctuation">.</span>exports<span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span> 
@@ -472,7 +490,7 @@ exports<span class="token punctuation">.</span>key<span class="token operator">=
 </ul>
 </li>
 </ul>
-<h4 id="1-2-经典面试：export"><a href="#1-2-经典面试：export" class="headerlink" title="1.2. 经典面试：export"></a>1.2. 经典面试：export</h4><p>为何直接使用 <code>exports</code> 导出 <code>commonjs</code> 模块，eg：<code>exports = “hello”</code>?</p>
+<h4 id="1-2-经典面试：exports"><a href="#1-2-经典面试：exports" class="headerlink" title="1.2. 经典面试：exports"></a>1.2. 经典面试：exports</h4><p>为何不能使用 <code>exports</code> 导出 <code>commonjs</code> 模块，eg：<code>exports = “hello”</code>?</p>
 <p><strong>解析：</strong> </p>
 <ul>
 <li><code>commonjs</code> 模块是通过 <code>module.exports</code> 导出模块，<code>exports</code> 为 <code>module.exports</code> 的引用</li>
@@ -503,13 +521,13 @@ key<span class="token punctuation">.</span>key1 <span class="token operator">=</
 引用断掉；无法改变obj
 */</span>
 key <span class="token operator">=</span> <span class="token string">"hello world"</span></code></pre>
-<h4 id="2-简单实现"><a href="#2-简单实现" class="headerlink" title="2. 简单实现"></a>2. 简单实现</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<h4 id="2-原理实现"><a href="#2-原理实现" class="headerlink" title="2. 原理实现"></a>2. 原理实现</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vm'</span><span class="token punctuation">)</span>
 
 <span class="token keyword">function</span> customRequire <span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> pathToFile <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>
-  <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>pathToFile<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>pathToFile<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 
   <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token string">'(function(require, module, exports, __dirname, __filename, zhuawa) {'</span><span class="token punctuation">,</span>
@@ -531,8 +549,66 @@ key <span class="token operator">=</span> <span class="token string">"hello worl
 
   <span class="token keyword">return</span> module<span class="token punctuation">.</span>exports
 <span class="token punctuation">}</span>
+
 global<span class="token punctuation">.</span>r <span class="token operator">=</span> customRequire</code></pre>
-<h4 id="3-原理解析"><a href="#3-原理解析" class="headerlink" title="3.原理解析"></a>3.原理解析</h4><p>待填坑~</p>
+<h4 id="3-源码解析"><a href="#3-源码解析" class="headerlink" title="3.源码解析"></a>3.源码解析</h4><p>源码路径：/lib/internal/modules/cjs/</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//loader.js</span>
+<span class="token comment" spellcheck="true">//require函数定义</span>
+<span class="token number">1</span>、Module<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>require：调用__load函数
+<span class="token number">2</span>、Module<span class="token punctuation">.</span>__load：_cache处理，调用load函数
+<span class="token number">3</span>、Module<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>load函数：调用Module<span class="token punctuation">.</span>_extensions<span class="token punctuation">[</span>extension<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//不同的后缀通过定义不同的函数指定解析规则：以Module._extensions['.js']为例</span>
+<span class="token number">4</span>、Module<span class="token punctuation">.</span>_extensions<span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//读取缓存或者通过readFileSync读取内容</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>cached<span class="token operator">?</span><span class="token punctuation">.</span>source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    content <span class="token operator">=</span> cached<span class="token punctuation">.</span>source<span class="token punctuation">;</span>
+    cached<span class="token punctuation">.</span>source <span class="token operator">=</span> undefined<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    content <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//...</span>
+  <span class="token comment" spellcheck="true">//调用compile解析</span>
+  module<span class="token punctuation">.</span><span class="token function">_compile</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token number">5</span>、Module<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>_compile <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//生成包裹函数：warpSafe获取函数字符串并使用vm执行生成执行函数</span>
+  <span class="token keyword">const</span> compiledWrapper <span class="token operator">=</span> <span class="token function">wrapSafe</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> content<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//执行函数</span>
+  <span class="token keyword">const</span> exports <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>exports<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> thisValue <span class="token operator">=</span> exports<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> module <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>inspectorWrapper<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    result <span class="token operator">=</span> <span class="token function">inspectorWrapper</span><span class="token punctuation">(</span>compiledWrapper<span class="token punctuation">,</span> thisValue<span class="token punctuation">,</span> exports<span class="token punctuation">,</span>
+        require<span class="token punctuation">,</span> module<span class="token punctuation">,</span> filename<span class="token punctuation">,</span> dirname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//静态方法Reflect.apply(target, thisArgument, argumentsList)</span>
+    <span class="token comment" spellcheck="true">//通过指定的参数列表发起对目标(target)函数的调用</span>
+    result <span class="token operator">=</span> <span class="token function">ReflectApply</span><span class="token punctuation">(</span>compiledWrapper<span class="token punctuation">,</span> thisValue<span class="token punctuation">,</span>
+        <span class="token punctuation">[</span>exports<span class="token punctuation">,</span> require<span class="token punctuation">,</span> module<span class="token punctuation">,</span> filename<span class="token punctuation">,</span> dirname<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token number">6</span>、<span class="token keyword">function</span> <span class="token function">wrapSafe</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> content<span class="token punctuation">,</span> cjsModuleInstance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/* 生成包裹函数字符：
+    let wrap = function(script) {
+       return Module.wrapper[0] + script + Module.wrapper[1];
+    };
+    const wrapper = [
+      '(function (exports, require, module, __filename, __dirname) { ',
+      '\n});',
+    ]；*/</span>
+      <span class="token keyword">const</span> wrapper <span class="token operator">=</span> Module<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//获取包裹函数</span>
+    <span class="token keyword">return</span> vm<span class="token punctuation">.</span><span class="token function">runInThisContext</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      filename<span class="token punctuation">,</span>
+      lineOffset<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      displayErrors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      importModuleDynamically<span class="token punctuation">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>specifier<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> loader <span class="token operator">=</span> asyncESM<span class="token punctuation">.</span>ESMLoader<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> loader<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span>specifier<span class="token punctuation">,</span> <span class="token function">normalizeReferrerURL</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -927,7 +1003,7 @@ global<span class="token punctuation">.</span>r <span class="token operator">=</
     
                 
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">18.4k</span>
+                <span class="white-color">20.1k</span>
                 
     
                 <br>
