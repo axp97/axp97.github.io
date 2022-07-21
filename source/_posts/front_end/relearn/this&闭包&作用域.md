@@ -16,4 +16,4 @@ tags:
 
 ## 知识要点
 
-![xmind总结](/static/xmind/frontEnd/relearn/this.png)
+![xmind总结](/static/xmind/front_end/relearn/this.png)

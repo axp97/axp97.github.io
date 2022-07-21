@@ -5,6 +5,7 @@ author: 安小盼
 categories: 前端
 tags:
   - Javascript
+  - TypeScript
   - 前端进阶
 ---
 
@@ -149,4 +150,4 @@ TypeScript 基础方面总结请跳到文底看 xmind 文件呢，或者阅览[�
   可以把泛型理解为代表类型的参数
 
 
-![xmind总结](/static/xmind/frontEnd/relearn/ts.png)
+![xmind总结](/static/xmind/front_end/relearn/ts.png)

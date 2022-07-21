@@ -157,8 +157,8 @@ clicklove:
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatar.jpg
-  career: 前端工程师
-  introduction: 我是一名普普通通的前端工程师，写代码为了糊口，更为了取悦自己
+  career: 前端
+  introduction: 哈哈，你自己来了解我吧~
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.

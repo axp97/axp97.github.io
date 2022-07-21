@@ -12,7 +12,7 @@ tags:
 
 **为什么学**
 
--   Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的标准形式。
+-   Promise 重要性：async/await 语法的基础，JavaScript 中处理异步的标准形式
 -   深入理解 Promises 运行机制
 
 **能学到什么**
@@ -508,4 +508,4 @@ done：用于判断是否遍历结束，当没有更多可返回的数据时，�
 
 实际：Promise 语法糖，同步的形式写
 
-![xmind总结](/static/xmind/frontEnd/relearn/promise.png)
+![xmind总结](/static/xmind/front_end/relearn/promise.png)
